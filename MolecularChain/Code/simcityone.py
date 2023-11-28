@@ -23,6 +23,7 @@ class SimCity_1D:
         """
         # Constants
         self.ALPHA = 1
+        self.DELTA = 1  # Change in state
 
         # Parameters
         self.length = length
@@ -59,6 +60,39 @@ class SimCity_1D:
         self.energy = energy
 
         return energy
+
+    def _delta_energy(self, loc) -> float:
+        """
+        Calculate the change in energy of the chain.
+
+        The change in energy is calculated by considering the change in
+        energy due to the change in state of the particle at the location
+        specified by loc.
+        """
+        term1 = self.DELTA**2
+        term2 = self.ALPHA * self.DELTA * (pre - 2*self.state[loc] + post)
+
+        try:
+            pre = self.state[loc + 1]
+        except IndexError:
+            if not self.quiet:
+                print(f"The location {loc} is at the end of the chain.")
+                # Loop around to the beginning of the chain.
+                pre = self.state[0]
+        try:
+            post = self.state[loc - 1]
+        except IndexError:
+            if not self.quiet:
+                print(f"The location {loc} is at the beginning of the chain.")
+                # Loop around to the end of the chain.
+                post = self.state[-1]
+
+        # Watch out for minus sign!
+        delta_energy = term1 - term2
+
+        self.last_delta_energy = delta_energy
+
+        return delta_energy
 
         
 
