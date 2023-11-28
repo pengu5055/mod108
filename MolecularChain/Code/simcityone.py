@@ -46,6 +46,7 @@ class SimCity_1D:
         Randomize the state of the chain.
         """
         self.state = np.random.randint(self.state_bounds[0], self.state_bounds[1], self.length)
+        self.state[0] = self.state[-1] = 0
 
     def _energy(self) -> float:
         """
@@ -69,6 +70,7 @@ class SimCity_1D:
         energy due to the change in state of the particle at the location
         specified by loc.
         """
+        pre = post = 0
         term1 = self.DELTA**2
         term2 = self.ALPHA * delta_sign * self.DELTA * (pre - 2*self.state[loc] + post)
 
@@ -94,7 +96,7 @@ class SimCity_1D:
 
         return delta_energy
 
-    def run(self, steps: int, quiet: bool = False) -> tuple(np.ndarray):
+    def run(self, steps: int, quiet: bool = False) -> tuple:
         """
         Run the simulation for the specified number of steps.
         """
@@ -104,8 +106,14 @@ class SimCity_1D:
         self.last_delta_energy = 0
 
         for i in range(steps):
+            if i % 100 == 0 and not self.quiet:
+                print(f"Step {i} of {steps}...")
             # Choose a random location in the chain.
             loc = np.random.randint(0, self.length)
+
+            # Currently not allowing the first or last particle to move.
+            if loc == 0 or loc == self.length - 1:
+                continue
 
             # Modify the state at that location.
             sign = 1 if np.random.rand() < 0.5 else -1
