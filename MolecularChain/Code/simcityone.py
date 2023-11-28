@@ -31,12 +31,14 @@ class SimCity_1D:
         self.state_bounds = (state_bounds[0], state_bounds[1] + 1)
 
         self.state = states
-        if self.state is isinstance(self.state, Iterable):
-            if len(self.state) != self.length:
-                raise ValueError("The length of the state vector must be equal to the length of the chain.")
+
+        if isinstance(self.state, list | tuple | np.ndarray):
+            if len(self.state) == self.length:
+                self.state = states
             else:
-                pass
+                raise ValueError("The length of the state vector must be equal to the length of the chain.")
         else:
+            print("No state provided. Randomizing state...")
             self._randomize_state()
         
         self.state = np.array(self.state)
@@ -90,7 +92,7 @@ class SimCity_1D:
                 post = self.state[-1]
 
         # Watch out for minus sign!
-        delta_energy = term1 - term2
+        delta_energy = term1 + term2
 
         self.last_delta_energy = delta_energy
 
@@ -102,17 +104,24 @@ class SimCity_1D:
         """
         self.quiet = quiet
         self._energy()
-        self.energies = [self.energy]
+        self.energies = [np.copy(self.energy)]
         self.last_delta_energy = 0
 
         for i in range(steps):
             if i % 100 == 0 and not self.quiet:
                 print(f"Step {i} of {steps}...")
             # Choose a random location in the chain.
-            loc = np.random.randint(0, self.length)
-
             # Currently not allowing the first or last particle to move.
-            if loc == 0 or loc == self.length - 1:
+            loc = np.random.randint(1, self.length - 1)
+
+            if self.state[loc] == self.state_bounds[0]:
+                # If the state is already at the lower bound, don't allow it
+                # to go lower.
+                continue
+            # State bounds 1 are inclusive, so we need to subtract 1.
+            elif self.state[loc] == self.state_bounds[1] - 1:
+                # If the state is already at the upper bound, don't allow it
+                # to go higher.
                 continue
 
             # Modify the state at that location.
@@ -123,9 +132,9 @@ class SimCity_1D:
             delta_energy = self._delta_energy(loc, sign)
 
             # If the change in energy is negative, accept the change.
+            changed = 0
             if delta_energy < 0:
-                self.state[loc] += self.DELTA
-                self.energy += delta_energy
+                changed = self.energy + delta_energy
 
             # If the change in energy is positive, accept the change with
             # probability exp(-delta_energy / kT).
@@ -133,11 +142,13 @@ class SimCity_1D:
                 p = np.exp(-delta_energy / self.temperature)
                 # Roll probability.
                 if np.random.rand() < p:
-                    self.state[loc] += self.DELTA
-                    self.energy += delta_energy
+                    changed = self.energy + delta_energy
                 else:
                     # Roll back the change.
                     self.state[loc] -= sign * self.DELTA
+
+            if changed:
+                self.energy = changed
 
             self.energies.append(self.energy)
 
