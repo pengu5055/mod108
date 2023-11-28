@@ -61,7 +61,7 @@ class SimCity_1D:
 
         return energy
 
-    def _delta_energy(self, loc) -> float:
+    def _delta_energy(self, loc, delta_sign) -> float:
         """
         Calculate the change in energy of the chain.
 
@@ -70,7 +70,7 @@ class SimCity_1D:
         specified by loc.
         """
         term1 = self.DELTA**2
-        term2 = self.ALPHA * self.DELTA * (pre - 2*self.state[loc] + post)
+        term2 = self.ALPHA * delta_sign * self.DELTA * (pre - 2*self.state[loc] + post)
 
         try:
             pre = self.state[loc + 1]
@@ -94,5 +94,48 @@ class SimCity_1D:
 
         return delta_energy
 
-        
+    def run(self, steps: int, quiet: bool = False) -> tuple(np.ndarray):
+        """
+        Run the simulation for the specified number of steps.
+        """
+        self.quiet = quiet
+        self._energy()
+        self.energies = [self.energy]
+        self.last_delta_energy = 0
 
+        for i in range(steps):
+            # Choose a random location in the chain.
+            loc = np.random.randint(0, self.length)
+
+            # Modify the state at that location.
+            sign = 1 if np.random.rand() < 0.5 else -1
+            self.state[loc] += sign * self.DELTA
+
+            # Calculate the change in energy.
+            delta_energy = self._delta_energy(loc, sign)
+
+            # If the change in energy is negative, accept the change.
+            if delta_energy < 0:
+                self.state[loc] += self.DELTA
+                self.energy += delta_energy
+
+            # If the change in energy is positive, accept the change with
+            # probability exp(-delta_energy / kT).
+            else:
+                p = np.exp(-delta_energy / self.temperature)
+                # Roll probability.
+                if np.random.rand() < p:
+                    self.state[loc] += self.DELTA
+                    self.energy += delta_energy
+                else:
+                    # Roll back the change.
+                    self.state[loc] -= sign * self.DELTA
+
+            self.energies.append(self.energy)
+
+        if not self.quiet:
+            print(f"Initial energy: {self.energies[0]}")
+            print(f"Final energy: {self.energy}")
+
+        return self.state, self.energies
+    
