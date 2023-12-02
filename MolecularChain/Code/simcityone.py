@@ -11,7 +11,8 @@ class SimCity_1D:
                  length: int,
                  temperature: float,
                  state_bounds: tuple,
-                 states: Iterable = None
+                 states: Iterable = None,
+                 quiet: bool = False
                  ) -> None:
         """
         Initialize the class. 
@@ -31,6 +32,7 @@ class SimCity_1D:
         self.state_bounds = (state_bounds[0], state_bounds[1] + 1)
 
         self.state = states
+        self.quiet = quiet
 
         if isinstance(self.state, list | tuple | np.ndarray):
             if len(self.state) == self.length:
@@ -38,7 +40,8 @@ class SimCity_1D:
             else:
                 raise ValueError("The length of the state vector must be equal to the length of the chain.")
         else:
-            print("No state provided. Randomizing state...")
+            if not self.quiet:
+                print("No state provided. Randomizing state...")
             self._randomize_state()
         
         self.state = np.array(self.state)
@@ -98,11 +101,10 @@ class SimCity_1D:
 
         return delta_energy
 
-    def run(self, steps: int, quiet: bool = False) -> tuple:
+    def run(self, steps: int) -> tuple:
         """
         Run the simulation for the specified number of steps.
         """
-        self.quiet = quiet
         self._energy()
         self.energies = [np.copy(self.energy)]
         self.last_delta_energy = 0

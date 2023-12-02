@@ -17,14 +17,14 @@ sc = SimCity_1D(17, 1, (-18, 0), states=init)
 sc2 = SimCity_1D(17, 1, (-18, 0))
 sc3 = SimCity_1D(17, 1, (-18, 0))
 
-
+N = int(10e6)
 
 pre_state = np.copy(sc.state)
 pre_state2 = np.copy(sc2.state)
 pre_state3 = np.copy(sc3.state)
-states, energies = sc.run(100000)
-states2, energies2 = sc2.run(100000)
-states3, energies3 = sc3.run(100000)
+states, energies = sc.run(N)
+states2, energies2 = sc2.run(N)
+states3, energies3 = sc3.run(N)
 
 
 fig, ax = plt.subplots(1, 2, figsize=(10, 5))
