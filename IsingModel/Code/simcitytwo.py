@@ -81,6 +81,8 @@ class SimCity_2D:
                             term1 = -self.J * self.state[i, j] * self.state[k, l]
                             term2 = -self.H * self.state[i, j]
                             energy += term1 + term2
+        
+        self.energy = energy
 
         return energy
 
@@ -132,6 +134,9 @@ class SimCity_2D:
         """
         Run the simulation for the specified number of steps.
         """
+        # NOTE: This calculation takes long for large grids, MPI it so 
+        # that each process only calculates the energy of a portion of the
+        # grid.
         self._energy()
         self.energies = [np.copy(self.energy)]
         self.last_delta_energy = 0
@@ -142,13 +147,16 @@ class SimCity_2D:
                 print(f"Step {i} of {steps}...")
             # Choose a random location in the chain.
             # Currently not allowing the first or last particle to move.
-            loc = np.random.randint(1, (self.size - 1, self.size - 1))
+            loc = np.random.randint(0, (self.size, self.size))
             previous = self.state[*loc]
 
             # Modify the state at that location.
-            not_taken_states = np.delete(np.arange(self.state_bounds[0], self.state_bounds[1]), self.state[loc])
+            not_taken_states = np.delete(np.arange(self.state_bounds[0], self.state_bounds[1]), self.state[*loc])
             self.state[*loc] = np.random.choice(not_taken_states)
 
+            # DEBUG PRINT:
+            # if previous == 1: print(not_taken_states)
+            
             # Calculate the change in energy.
             delta_energy = self._delta_energy(loc)
 
