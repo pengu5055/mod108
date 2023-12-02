@@ -116,6 +116,9 @@ class SimCity_1D:
             # Currently not allowing the first or last particle to move.
             loc = np.random.randint(1, self.length - 1)
 
+            # NOTE: Does this prevent the state from changing if it is at the
+            # upper or lower bound?
+
             if self.state[loc] == self.state_bounds[0]:
                 # If the state is already at the lower bound, don't allow it
                 # to go lower.
