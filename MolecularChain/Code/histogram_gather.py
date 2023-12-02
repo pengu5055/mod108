@@ -19,10 +19,10 @@ size = comm.Get_size()
 length = 17
 temperature = 1
 state_bounds = (-18, 0)
-N = int(10e6)
+N = int(10e4)
 
 # Distribute order of chains to run
-M = 12
+M = 15200
 per_rank = M // size
 remainder = M % size
 QUEUE = np.array([per_rank] * size)
