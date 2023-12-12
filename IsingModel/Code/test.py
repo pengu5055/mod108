@@ -6,17 +6,19 @@ import matplotlib.pyplot as plt
 from simcitytwo import SimCity_2D
 import palettable as pl
 import cmasher as cmr
+import matplotlib as mpl
+mpl.use('TkAgg')
 
 cm = pl.scientific.sequential.GrayC_20.mpl_colormap
 colors = cmr.take_cmap_colors(cm, 7, cmap_range=(0.1, 0.9), return_fmt='hex')
 
-M = 100
+M = 500
 temperature = 273
 bounds = (0, 1)
 
 sc = SimCity_2D(M, temperature, bounds)
 
-N = int(10e5)
+N = int(1e4)
 
 pre_state = np.copy(sc.state)
 states, energies = sc.run(N)

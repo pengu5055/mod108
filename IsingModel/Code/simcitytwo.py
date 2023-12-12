@@ -96,23 +96,14 @@ class SimCity_2D:
         """
 
         s0 = self.state[loc[0], loc[1]]
-        try:
-            s1 = self.state[loc[0] - 1, loc[1]]
-        except IndexError:
-            # Do cyclic boundary conditions
-            s1 = self.state[-(loc[0] - 1), loc[1]]
+        s1 = self.state[loc[0] - 1, loc[1]]
+        s3 = self.state[loc[0], loc[1] - 1]
         
         try:
             s2 = self.state[loc[0] + 1, loc[1]]
         except IndexError:
             # Do cyclic boundary conditions
             s2 = self.state[loc[0] + 1 - self.size, loc[1]]
-
-        try:
-            s3 = self.state[loc[0], loc[1] - 1]
-        except IndexError:
-            # Do cyclic boundary conditions
-            s3 = self.state[loc[0], -(loc[1] - 1)]
         
         try:
             s4 = self.state[loc[0], loc[1] + 1]
@@ -146,7 +137,6 @@ class SimCity_2D:
             if i % 100 == 0 and not self.quiet:
                 print(f"Step {i} of {steps}...")
             # Choose a random location in the chain.
-            # Currently not allowing the first or last particle to move.
             loc = np.random.randint(0, (self.size, self.size))
             previous = self.state[*loc]
 
@@ -179,10 +169,41 @@ class SimCity_2D:
             if changed:
                 self.energy = changed
 
-            self.energies.append(self.energy)
+            self.energies.append(np.copy(self.energy))
 
         if not self.quiet:
             print(f"Initial energy: {self.energies[0]}")
             print(f"Final energy: {self.energy}")
 
         return self.state, self.energies
+    
+def construct_chunks(data: np.ndarray, size: int) -> tuple:
+    """
+    Construct a chunk of the grid to be calculated by the process.
+    """
+    # NOTE: This assumes that the grid is square.
+    # NOTE: This assumes that the grid is divisible by the number of processes.
+
+    # Calculate the number of rows per process.
+    elements_per_chunk = data.shape[0] // size
+
+    # Get start stop indices for chunks
+    chunks = []
+    for i in range(data.shape[0]):
+        for j in range(data.shape[1]):
+            x_start = i * elements_per_chunk
+            x_end = (i + 1) * elements_per_chunk
+            y_start = j * elements_per_chunk
+            y_end = (j + 1) * elements_per_chunk
+            chunks.append((x_start, x_end, y_start, y_end))
+
+    return chunks
+
+def chunk_distributor(grid_size: int, num_nodes: int):
+    """
+    Distribute chunks of the grid to each process.
+    """
+    total_chunks = grid_size**2
+    chunks_per_node = total_chunks // grid_size
+    extra_chunks = total_chunks % num_nodes
+
