@@ -16,7 +16,7 @@ class Metropolis1:
                  ) -> None:
         self.ALPHA = 1
         self.DELTA = 1
-        self.EPS = 1e-6
+        self.EPS = 1e-8
 
         self.length = length
         self.temperature = temperature
@@ -38,8 +38,8 @@ class Metropolis1:
         self.state = np.array(self.state)
         self.init_state = np.copy(self.state)
 
-        if not wait_for_execution:
-            self.run()
+        # if not wait_for_execution:
+        #    self.run()
 
     def _randomize_state(self) -> None:
         self.state = np.random.randint(self.state_bounds[0], self.state_bounds[1], self.length)
@@ -76,32 +76,30 @@ class Metropolis1:
 
         return delta_energy
     
-    def run(self, N: int) -> tuple:
+    def run(self) -> tuple:
         """
-        Run the Metropolis algorithm until average change over 5 steps is less than EPS.
+        Run the Metropolis algorithm until sum of changes over 10 steps is less than EPS.
         """
         self.energies = []
         self.energies.append(self._energy())
         step = 0
 
         # Main loop
-        while True:
-            if step % 100 == 0 and not self.quiet:
-                print(f"Step: {step} / {N}")
-            
-
+        while True:            
             # Choose a random location in the chain
             # Avoid the fixed boundary conditions
             loc = np.random.randint(1, self.length - 1)
 
-            # Impose state bounds
+            # Get the sign of the change
+            sign = 1 if np.random.rand() < 0.5 else -1
+
+            # Impose state bounds (change sign if at boundary)
             if self.state[loc] == self.state_bounds[0]:
-                delta_sign = 0
+                sign = 0
             elif self.state[loc] == self.state_bounds[1] - 1:
-                delta_sign = 0
+                sign = 0
 
             # If valid move, change state at loc
-            sign = 1 if np.random.rand() < 0.5 else -1
             self.state[loc] += sign * self.DELTA
 
             # Calculate energy change
@@ -123,14 +121,20 @@ class Metropolis1:
 
 
             # Exit condition - check for convergence
-            if step > 5:
-                if np.abs(np.mean(np.diff(self.energies[-5:]))) < self.EPS:
+            if step > 10:
+                exit_cond = np.sum(np.abs(np.diff(self.energies[-10:])))
+                if not self.quiet:
+                    print(f"Step: {step}, Exit condition: {exit_cond}", end="\r")
+                if exit_cond < self.EPS:
                     break
 
+            # Increment step
+            step += 1
+
         if not self.quiet:
+            print("\n")
             print("Simulation complete.")
             print(f"Inital energy: {self.energies[0]}")
             print(f"Final energy: {self.energies[-1]}")
         
         return self.init_state, self.state, self.energies
-
