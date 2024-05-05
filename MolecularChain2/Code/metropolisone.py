@@ -16,6 +16,7 @@ class Metropolis1:
                  ) -> None:
         self.ALPHA = 1
         self.DELTA = 1
+        self.MAX_ITER = 100000
         self.EPS = 1e-10
 
         self.length = length
@@ -46,14 +47,12 @@ class Metropolis1:
         self.state[0] = self.state[-1] = 0  # Fixed boundary conditions
 
     def _energy(self) -> float:
-        # energy = 0
-        # for i in range(self.length - 1):
-        #     term1 = self.ALPHA * self.state[i]
-        #     term2 = 0.5 * (self.state[i+1] - self.state[i])**2
-        #     energy += term1 + term2
+        energy = 0
+        for i in range(1, self.length - 1):
+            term1 = self.ALPHA * self.state[i]
+            term2 = 0.5 * (self.state[i+1] - self.state[i])**2
+            energy += term1 + term2
 
-        energy = np.sum(self.ALPHA * self.state) + 0.5 * np.sum((np.diff(self.state))**2)
-    
         return energy
     
     def _delta_energy(self, loc, delta_sign, prev_energy) -> float:
@@ -61,8 +60,7 @@ class Metropolis1:
         Calculate the change in energy for a given move.
         """
         # Calculate the change in energy
-        delta = np.zeros(self.length)
-        delta[loc] = self.DELTA * delta_sign
+        delta = self.DELTA * delta_sign
         
         # Assert periodic boundary conditions
         if (loc - 1) >= 0:
@@ -75,7 +73,7 @@ class Metropolis1:
             element2 = self.state[0]
 
         # delta_energy = delta**2 - self.ALPHA * delta * (element1 - 2*self.state[loc] + element2)
-        new_energy = self.ALPHA * self.DELTA + 0.5*(element2 - self.state[loc] - self.DELTA)**2 + 0.5*(self.state[loc] + self.DELTA - element1)**2
+        new_energy = -self.ALPHA * delta + 0.5*(element2 - self.state[loc] - delta)**2 + 0.5*(self.state[loc] + delta - element1)**2
         delta_energy = new_energy - prev_energy
 
         return delta_energy
@@ -107,31 +105,34 @@ class Metropolis1:
             self.state[loc] += sign * self.DELTA
 
             # Calculate energy change
-            # delta_energy = self._delta_energy(loc, sign, self.energies[step - 1])
+            # delta_energy = self._delta_energy(loc, sign, self.energies[step])
             # Temporary fix: Use whole for loop
-            delta_energy = self._energy() - self.energies[step - 1]
+            delta_energy = self._energy() - self.energies[step]
 
             # Accept or reject move
             if delta_energy < 0:
-                self.energies.append(self.energies[step - 1] + delta_energy)
+                self.energies.append(self.energies[step] + delta_energy)
             
             # If energy is higher, accept with probability exp(-delta_energy / kT)
             else:
                 p = np.exp(-delta_energy / self.temperature)
                 if np.random.rand() < p:
-                    self.energies.append(self.energies[step - 1] + delta_energy)
+                    self.energies.append(self.energies[step] + delta_energy)
                 else:
                     # Roll back the change
                     self.state[loc] -= sign * self.DELTA
-                    self.energies.append(self.energies[step - 1])
+                    self.energies.append(self.energies[step])
 
 
             # Exit condition - check for convergence
             if step > 100:
                 exit_cond = np.sum(np.abs(np.diff(self.energies[-100:])))
+                exit_cond2 = self.energies[-1] <= np.min(self.energies)
                 if not self.quiet:
                     print(f"Step: {step}, Exit condition: {exit_cond}, Delta Energy: {delta_energy}", end="\r")
-                if exit_cond < self.EPS:
+                if exit_cond < self.EPS:  # and exit_cond2:
+                    break
+                elif step > self.MAX_ITER:
                     break
 
             # Increment step
