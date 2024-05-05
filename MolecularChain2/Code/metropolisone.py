@@ -16,7 +16,7 @@ class Metropolis1:
                  ) -> None:
         self.ALPHA = 1
         self.DELTA = 1
-        self.EPS = 1e-8
+        self.EPS = 1e-10
 
         self.length = length
         self.temperature = temperature
@@ -46,11 +46,13 @@ class Metropolis1:
         self.state[0] = self.state[-1] = 0  # Fixed boundary conditions
 
     def _energy(self) -> float:
-        energy = 0
-        for i in range(self.length - 1):
-            term1 = self.ALPHA * self.state[i]
-            term2 = 0.5 * (self.state[i+1] - self.state[i])**2
-            energy += term1 + term2
+        # energy = 0
+        # for i in range(self.length - 1):
+        #     term1 = self.ALPHA * self.state[i]
+        #     term2 = 0.5 * (self.state[i+1] - self.state[i])**2
+        #     energy += term1 + term2
+
+        energy = np.sum(self.ALPHA * self.state) + 0.5 * np.sum((np.diff(self.state))**2)
     
         return energy
     
@@ -59,7 +61,8 @@ class Metropolis1:
         Calculate the change in energy for a given move.
         """
         # Calculate the change in energy
-        delta = self.DELTA * delta_sign
+        delta = np.zeros(self.length)
+        delta[loc] = self.DELTA * delta_sign
         
         # Assert periodic boundary conditions
         if (loc - 1) >= 0:
@@ -71,14 +74,15 @@ class Metropolis1:
         else:
             element2 = self.state[0]
 
-        new_energy = delta**2 - self.ALPHA * delta * (element1 - 2*self.state[loc] + element2)
+        # delta_energy = delta**2 - self.ALPHA * delta * (element1 - 2*self.state[loc] + element2)
+        new_energy = self.ALPHA * self.DELTA + 0.5*(element2 - self.state[loc] - self.DELTA)**2 + 0.5*(self.state[loc] + self.DELTA - element1)**2
         delta_energy = new_energy - prev_energy
 
         return delta_energy
     
     def run(self) -> tuple:
         """
-        Run the Metropolis algorithm until sum of changes over 10 steps is less than EPS.
+        Run the Metropolis algorithm until sum of changes over 100 steps is less than EPS.
         """
         self.energies = []
         self.energies.append(self._energy())
@@ -103,7 +107,9 @@ class Metropolis1:
             self.state[loc] += sign * self.DELTA
 
             # Calculate energy change
-            delta_energy = self._delta_energy(loc, sign, self.energies[step - 1])
+            # delta_energy = self._delta_energy(loc, sign, self.energies[step - 1])
+            # Temporary fix: Use whole for loop
+            delta_energy = self._energy() - self.energies[step - 1]
 
             # Accept or reject move
             if delta_energy < 0:
@@ -121,10 +127,10 @@ class Metropolis1:
 
 
             # Exit condition - check for convergence
-            if step > 10:
-                exit_cond = np.sum(np.abs(np.diff(self.energies[-10:])))
+            if step > 100:
+                exit_cond = np.sum(np.abs(np.diff(self.energies[-100:])))
                 if not self.quiet:
-                    print(f"Step: {step}, Exit condition: {exit_cond}", end="\r")
+                    print(f"Step: {step}, Exit condition: {exit_cond}, Delta Energy: {delta_energy}", end="\r")
                 if exit_cond < self.EPS:
                     break
 
