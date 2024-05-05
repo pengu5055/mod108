@@ -17,10 +17,16 @@ class Metropolis1:
         self.ALPHA = 1
         self.DELTA = 1
         self.MAX_ITER = 100000
+        self.STOP_STEPS = 50
         self.EPS = 1e-10
+        self.EXIT_COND2 = False
+        self.EXIT_COND2_TOL = 0.85
+        self.ANNEAL = True
+        self.ANNEAL_RATE = 0.9999
 
         self.length = length
         self.temperature = temperature
+        self.temperatures = [temperature]
         self.state_bounds = (state_bounds[0], state_bounds[1] + 1)
 
         self.state = states
@@ -80,7 +86,7 @@ class Metropolis1:
     
     def run(self) -> tuple:
         """
-        Run the Metropolis algorithm until sum of changes over 100 steps is less than EPS.
+        Run the Metropolis algorithm until sum of changes over self.STOP_STEPS steps is less than EPS.
         """
         self.energies = []
         self.energies.append(self._energy())
@@ -112,6 +118,9 @@ class Metropolis1:
             # Accept or reject move
             if delta_energy < 0:
                 self.energies.append(self.energies[step] + delta_energy)
+
+                if self.ANNEAL:
+                    self.temperature *= self.ANNEAL_RATE
             
             # If energy is higher, accept with probability exp(-delta_energy / kT)
             else:
@@ -125,18 +134,21 @@ class Metropolis1:
 
 
             # Exit condition - check for convergence
-            if step > 100:
-                exit_cond = np.sum(np.abs(np.diff(self.energies[-100:])))
-                exit_cond2 = self.energies[-1] <= np.min(self.energies)
+            if step > self.STOP_STEPS:
+                exit_cond = np.sum(np.abs(np.diff(self.energies[-self.STOP_STEPS:])))
+                exit_cond2 = self.energies[-1] <= np.min(self.energies) * self.EXIT_COND2_TOL if self.EXIT_COND2 else True
                 if not self.quiet:
                     print(f"Step: {step}, Exit condition: {exit_cond}, Delta Energy: {delta_energy}", end="\r")
-                if exit_cond < self.EPS:  # and exit_cond2:
+                if exit_cond < self.EPS and exit_cond2:
                     break
                 elif step > self.MAX_ITER:
                     break
 
             # Increment step
             step += 1
+
+            # Store temperature
+            self.temperatures.append(self.temperature)
 
         if not self.quiet:
             print("\n")
