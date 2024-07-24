@@ -150,6 +150,9 @@ class Metropolis1:
             # Store temperature
             self.temperatures.append(self.temperature)
 
+        # Remember number of steps needed
+        self.sim_steps = step
+
         if not self.quiet:
             print("\n")
             print("Simulation complete.")
