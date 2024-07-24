@@ -14,7 +14,20 @@
 \usepackage{natbib}
 
 
-\newcommand{\bb}[1]{\mathbf{#1}}
+\newcommand{\bb}[1]{\bm#1}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\pp}{\partial}
+\newcommand{\dg}{\dagger}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\id}{\mathbb{1}}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\ua}{\uparrow\>}
+\newcommand{\da}{\downarrow\>}
+\newcommand{\fs}[1]{\slashed{#1}}  % Feynmann slash
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand\thickbar[1]{\accentset{\rule{.5em}{.03em}}{#1}}
+\renewcommand{\bar}{\thickbar}
 
 % Start the document
 \begin{document}
@@ -74,17 +87,63 @@ accepting a bad move is given by the Boltzmann factor and the temperature of the
 %
 where $\Delta E$ is the change in energy, $k$ is the Boltzmann constant and $T$ is the temperature. Why exactly this works 
 is a bit more involved and probably out of the scope of this report however a dedicated reader can find more information in this 
-well written blog post by Gregory Gundersen of Princeton University \cite{Gundersen_2019}. \\
+well written blog post by Gregory Gundersen of Princeton University \cite{Gundersen_2019}. We can define multiple different 
+exit conditions for the algorithm, such as a fixed number of iterations, a fixed number of accepted moves or an $\varepsilon$ tolerance
+for $\Delta E$. \\
 
+\section{Task at Hand}
+\subsection{Molecular Chain}
+The instructions given demand that we first explore the Metropolis-Hastings algorithm on a simple molecular chain. The molecular chain 
+is made up of $17$ molecules that can go from a state of $0$ to a depth of $-18$. The deeper a molecule is the lower its potential energy.
+But we also have a positive energy contribution if neighboring bonds are very stretched. The final result is determining the equilibrium
+energy as a function of the temperature. \\ % Try find analytical solution for this.
 
-
-\section{Task}
+\subsection{Ising Model}
+As mentioned in the intro our main goal is to simulate the relaxation of a lattice of spins in a magnetic field. We can describe a
+ferromagnetic material with the following Hamiltonian:
+%
+\begin{equation}
+    \label{eq:ising-hamiltonian}
+    \mc{H} = -J\sum_{\la i,\>j\ra}s_is_j - H\sum_is_i\>,
+\end{equation}
+%
+where $s_i$ is the spin of the $i$-th site, $H$ is the external magnetic field and $J$ is the coupling constant, which is positive for
+ferromagnetic materials and negative for antiferromagnetic materials. In the absence of a magnetic field the critical temperature for the 
+transition from a paramagnetic to a ferromagnetic state is given by the Onsager solution approximately as:
+%
+\begin{equation}
+    \label{eq:onsager}
+    T_c \approx 2.269185\>\frac{J}{k_B}\>.
+\end{equation}
+%
+The instructions demand that we determine the average energy $\la E\ra$ and eigen-magnetization $\la S\ra$ as functions of temperature. The
+magnetization of the system is defined as:
+%
+\begin{equation}
+    \label{eq:magnetization}
+    S = \frac{1}{N}\sum_is_i\>,
+\end{equation}
+%
+where $N$ is the number of spins. We can also have a look at spin susceptibility $\chi$ and heat capacity $c$ at different external magnetic
+field strengths. Spin susceptibility is defined as:
+%
+\begin{equation}
+    \label{eq:spin-susceptibility}
+    \chi = \frac{\la S^2\ra - \la S\ra^2}{Nk_BT}\>,
+\end{equation}
+%
+and heat capacity is defined as:
+%
+\begin{equation}
+    \label{eq:heat-capacity}
+    c = \frac{\la E^2\ra - \la E\ra^2}{Nk_BT^2}\>.
+\end{equation}
 \section{Solution Overview}
 \section{Results}
 \section{Conclusion and Comments}
 
 % Add references
-\newpage
+% \newpage
 \bibliographystyle{unsrt}
 \bibliography{mod108}
 
