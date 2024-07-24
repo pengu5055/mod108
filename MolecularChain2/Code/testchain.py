@@ -7,18 +7,21 @@ from metropolisone import Metropolis1
 
 bounds = (-18, 0)
 length = 17
-temperature = 10
+temperature = 1
 val = -10
-init = np.array([0, val, val, val, val, val, val, val + 5, val, val, val, val, val, val, val, val, 0])
+# init = np.array([0, val, val, val, val, val, val, val + 5, val, val, val, val, val, val, val, val, 0])
 # init = [0, -17, -4, -2, -8, -13, -7, -2, -5, -2, -3, -2, -3, -10, -15, -7, 0]
 
-m = Metropolis1(length, temperature, bounds, states=init)
-m.EXIT_COND2 = True
+m = Metropolis1(length, temperature, bounds)
+m.EXIT_COND2 = False
+m.STOP_STEPS = 50
+m.EPS = 1e-14
 s_init, s_final, en = m.run()
 fig, ax = plt.subplots(1, 3, figsize=(10, 5))
 
 ax[0].plot(s_init, color='blue')
 ax[0].plot(s_final, color='red')
+ax[0].scatter(np.arange(0, 17), s_final, color='black', alpha=1, s=15)
 
 ax[1].plot(en, color='blue')
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.9)  24 JUL 2024 15:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.9)  24 JUL 2024 17:19
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -273,7 +273,7 @@ Package hyperref Info: Link coloring ON on input line 20.
 \@outlinefile=\write3
 \openout3 = `mod108.out'.
 
-<logo_fmf.pdf, id=7, 233.03412pt x 141.6228pt>
+<logo_fmf.pdf, id=23, 233.03412pt x 141.6228pt>
 File: logo_fmf.pdf Graphic file (type pdf)
 <use logo_fmf.pdf>
 Package pdftex.def Info: logo_fmf.pdf  used on input line 25.
@@ -287,30 +287,44 @@ Package hyperref Info: Option `pageanchor' set `true' on input line 48.
 \openout4 = `mod108.toc'.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 58--62
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 70.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 70.
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--78
+
+ []
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.66 \end{document}
-                    [1] (mod108.aux)
+l.87 \newpage
+              [1] (mod108.bbl) [2] (mod108.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-30>
  ***********
 Package rerunfilecheck Info: File `mod108.out' has not changed.
-(rerunfilecheck)             Checksum: 9814C2D956916ADB9290ECA4E25C967A;103.
+(rerunfilecheck)             Checksum: E7627F4313ADCA5D2840AE14F693213F;539.
  ) 
 Here is how much of TeX's memory you used:
- 9317 strings out of 475550
- 147119 string characters out of 5759194
- 1919238 words of memory out of 5000000
- 30442 multiletter control sequences out of 15000+600000
- 560492 words of font info for 44 fonts, out of 8000000 for 9000
+ 9350 strings out of 475550
+ 147692 string characters out of 5759194
+ 1924238 words of memory out of 5000000
+ 30462 multiletter control sequences out of 15000+600000
+ 561006 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,322b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on mod108.pdf (2 pages, 77164 bytes).
+ 75i,6n,79p,322b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on mod108.pdf (3 pages, 154768 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 4 named destinations out of 1000 (max. 500000)
- 14 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 PDF objects out of 1000 (max. 8388607)
+ 12 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

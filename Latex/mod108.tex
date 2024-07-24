@@ -55,12 +55,38 @@ Ljubljana, July 2024 \\
 \pagenumbering{arabic}
 
 \section{Introduction}
+We're continuing our exploration into random numbers and their applications. Previously we had a look at Monte Carlo 
+sampling. Today we're going to delve into the Metropolis-Hastings algorithm, which can be thought of as Monte Carlo 
+sampling with a few extra steps. Since our end goal is to simulate the relaxation of a lattice of spins in a magnetic
+field, we'll take the Ising model as our physical context. \\
 
+We know from statistical physics that the 2D Ising model relaxes to a state of minimum energy. We can simulate this 
+relaxation by flipping spins at random and accepting or rejecting the new state based on the change in energy. We can have 
+a negative change of energy which we can call a \textit{good move} or a positive change of energy which we can call a
+\textit{bad move}. The added twist with this algorithm is that while we always accept the new state if we make a good move, we 
+also sometimes accept a new state after a bad move. This is the key to the Metropolis-Hastings algorithm. Given our system the probability of
+accepting a bad move is given by the Boltzmann factor and the temperature of the system:
+%
+\begin{equation}
+    \label{eq:bad-accept-prob}
+    P_{\mathrm{bad\>accept}} = \exp\left(-\frac{\Delta E}{kT}\right)\>,
+\end{equation}
+%
+where $\Delta E$ is the change in energy, $k$ is the Boltzmann constant and $T$ is the temperature. Why exactly this works 
+is a bit more involved and probably out of the scope of this report however a dedicated reader can find more information in this 
+well written blog post by Gregory Gundersen of Princeton University \cite{Gundersen_2019}. \\
+
+
+
+\section{Task}
+\section{Solution Overview}
+\section{Results}
+\section{Conclusion and Comments}
 
 % Add references
-% \newpage
-% \bibliographystyle{unsrt}
-% \bibliography{seminar}
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{mod108}
 
 % End document
 \end{document}
