@@ -24,4 +24,5 @@ ax[1].plot(en, color='blue')
 
 ax[2].plot(m.temperatures, color='green')
 
+plt.tight_layout()
 plt.show()
