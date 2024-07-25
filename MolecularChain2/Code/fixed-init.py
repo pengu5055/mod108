@@ -27,20 +27,21 @@ m.EPS = 1e-14
 s_init, s_final, en = m.run()
 
 # Append the run to HDF5
-save_path = "./MolecularChain2/Results/fixed-initial.h5"
-iter_number = argv[1]
-print(f"Storing run {iter_number} to '{save_path}'..")
+if False:
+    save_path = "./MolecularChain2/Results/fixed-initial.h5"
+    iter_number = argv[1]
+    print(f"Storing run {iter_number} to '{save_path}'..")
 
-with h5py.File(save_path, "a") as f:
-    group = f.create_group(f"{iter_number}")
-    dset_state = group.create_dataset(f"state-{iter_number}", data=s_final)
-    dset_en = group.create_dataset(f"energy-{iter_number}", data=en)
-    dset_t = group.create_dataset(f"temperature-{iter_number}", data=m.temperatures)
+    with h5py.File(save_path, "a") as f:
+        group = f.create_group(f"{iter_number}")
+        dset_state = group.create_dataset(f"state-{iter_number}", data=s_final)
+        dset_en = group.create_dataset(f"energy-{iter_number}", data=en)
+        dset_t = group.create_dataset(f"temperature-{iter_number}", data=m.temperatures)
 
-print(f"Saved!")
+    print(f"Saved!")
 
 # Plotting
-if False:
+if True:
     colors = ["#37123c","#d72483","#ddc4dd","#60afff","#98CE00"]
 
     fig, ax = plt.subplots(1, 3, figsize=(10, 5))
