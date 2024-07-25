@@ -15,7 +15,7 @@ from sys import argv
 
 bounds = (-18, 0)
 length = 17
-temperature = argv[1]
+temperature = float(argv[1])
 init = [0, -17, -4, -2, -8, -13, -7, -2, -5, -2, -3, -2, -3, -10, -15, -7, 0]
 molecules = np.arange(0, 17)
 
@@ -23,7 +23,7 @@ m = Metropolis1(length, temperature, bounds, states=init)
 m.EXIT_COND2 = False
 m.STOP_STEPS = 50
 m.EPS = 1e-14
-m.ANNEAL_RATE = argv[2]
+m.ANNEAL_RATE = float(argv[2])
 s_init, s_final, en = m.run()
 
 if True:
