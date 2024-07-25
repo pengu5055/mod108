@@ -27,7 +27,7 @@ m.DELTA = float(argv[2])
 s_init, s_final, en = m.run()
 
 if True:
-    save_path = "./MolecularChain2/Results/par-gridscan-EPS-DELTA.h5"
+    save_path = "./MolecularChain2/Results/par-gridscan-EPS-DELTA-v2.h5"
     arg1 = argv[1]
     arg2 = argv[2]
     print(f"Storing run {arg1, arg2} to '{save_path}'..")
