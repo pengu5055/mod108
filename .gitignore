@@ -1,4 +1,4 @@
 .venv/
 
 # Files too large. Upload to local server
-./MolecularChain2/Results/par-gridscan-T-annealR.h5
+MolecularChain2/Results/par-gridscan-T-annealR.h5
