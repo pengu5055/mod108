@@ -65,17 +65,31 @@ colors = ["#37123c","#d72483","#ddc4dd","#60afff","#98CE00"]
 
 fig, ax = plt.subplots(1, 3, figsize=(12, 5))
 
-ax[0].plot(init, color=colors[2], zorder=1)
+ax[0].plot(init, color=colors[2], zorder=1, label="Initial State")
 ax[0].scatter(molecules, init, color=colors[1], alpha=0.3, s=15, zorder=2)
-ax[0].plot(avg_state, color=colors[1], zorder=1)
-ax[0].errorbar(molecules, avg_state, yerr=sigma_state, color=colors[0], alpha=1, fmt='o', markersize=5, capsize=3, zorder=2)
+ax[0].plot(avg_state, color=colors[1], zorder=1, label="Average State")
+ax[0].errorbar(molecules, avg_state, yerr=sigma_state, color=colors[0],
+               alpha=1, fmt='o', markersize=5, capsize=3, zorder=2,
+               label=r"Final State $\pm 1\sigma$")
+ax[0].legend(frameon=False, ncols=1,
+             loc='upper center', bbox_to_anchor=(0.375, 0.3))
 ax[0].set_xlabel("Molecule in Chain")
 ax[0].set_ylabel("State")
 ax[0].set_title("Average State at Convergence")
 
-ax[1].axhline(avg_energy, color=colors[4], linestyle='--')
-ax[1].plot(delta_energy, color=colors[3])
-ax[1].scatter(runs, delta_energy, color=colors[0], alpha=1, s=15)
+e_min = final_energies.min()
+e_max = final_energies.max()
+e_range_offset = (e_max - e_min) * 0.15
+
+ax[1].axhline(avg_energy, color=colors[4], linestyle='--', label=f"Average $E$")
+ax[1].scatter(runs, final_energies, color=colors[0], alpha=1, s=15)
+ax[1].axhline(avg_energy + sigma_energy, color=colors[3], ls=':')
+ax[1].axhline(avg_energy - sigma_energy, color=colors[3], ls=':')
+ax[1].fill_between(runs, avg_energy - sigma_energy, avg_energy + sigma_energy,
+                   color=colors[4], alpha=0.3, label=r"1-$\sigma$ band")
+ax[1].set_ylim(e_min - e_range_offset, e_max + e_range_offset)
+ax[1].set_xlim(0, num_runs)
+ax[1].legend(frameon=False)
 ax[1].set_xlabel("Run")
 ax[1].set_ylabel("Energy [arb. units]")
 ax[1].set_title("Scatter of Energies")
@@ -92,7 +106,7 @@ ax[2].fill_between(runs, avg_temperature - sigma_temperature, avg_temperature + 
                    color=colors[3], alpha=0.3, label=r"1-$\sigma$ band")
 ax[2].set_ylim(t_min - t_range_offset, t_max + t_range_offset)
 ax[2].set_xlim(0, num_runs)
-
+ax[2].legend(frameon=False)
 ax[2].set_xlabel("Run")
 ax[2].set_ylabel("Temperature [arb. units]")
 ax[2].set_title("Scatter of Temperatures")
