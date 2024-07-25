@@ -1,4 +1,5 @@
-font.family         : "IBM Plex Serif"
+font.family         : "IBM Plex Mono"
+axes.titlepad       : 10
 font.size           : 10
 axes.labelsize      : 12
 axes.labelweight    : "medium"
