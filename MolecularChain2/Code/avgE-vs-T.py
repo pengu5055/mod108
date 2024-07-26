@@ -20,7 +20,7 @@ m.EPS = 1e-14
 s_init, s_final, en = m.run()
 
 if True:
-    save_path = "./MolecularChain2/Results/avgE-vs-T.h5"
+    save_path = "./MolecularChain2/Results/avgE-vs-T-v2.h5"
     arg1 = argv[1]  # Temperature
     arg2 = argv[2]  # Run number
     print(f"Storing run {arg1, arg2} to '{save_path}'..")
