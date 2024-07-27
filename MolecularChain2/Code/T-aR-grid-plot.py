@@ -95,6 +95,6 @@ ax[1].set_xlabel("Annealing Rate")
 ax[1].set_ylabel("Temperature")
 ax[1].set_title("Deviation from Avg. Final Energy")
 
-plt.savefig("./MolecularChain2/Images/T-aR-gridscan.png", dpi=400)
 plt.tight_layout()
+plt.savefig("./MolecularChain2/Images/T-aR-gridscan.png", dpi=400)
 plt.show()
