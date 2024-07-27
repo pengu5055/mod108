@@ -55,6 +55,7 @@ ax[0].errorbar(molecules, avg_avg_shape, yerr=avg_sigma, linestyle='None',
                color=colors[0], label=r"1-$\sigma$ error", fmt='o', capsize=5)
 ax[0].set_xlabel("Molecule")
 ax[0].set_ylabel("State")
+ax[0].legend(frameon=False)
 ax[0].set_title(r"Average Shape of Chain across all $T$")
 
 
