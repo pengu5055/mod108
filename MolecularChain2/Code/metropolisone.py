@@ -15,6 +15,7 @@ class Metropolis1:
                  wait_for_execution: bool = False,
                  ) -> None:
         self.ALPHA = 1
+        self.BETA = 1
         self.DELTA = 1
         self.MAX_ITER = 100000
         self.STOP_STEPS = 50
@@ -56,7 +57,7 @@ class Metropolis1:
         energy = 0
         for i in range(1, self.length - 1):
             term1 = self.ALPHA * self.state[i]
-            term2 = 0.5 * (self.state[i+1] - self.state[i])**2
+            term2 = 0.5 * self.BETA * (self.state[i+1] - self.state[i])**2
             energy += term1 + term2
 
         return energy
@@ -79,7 +80,7 @@ class Metropolis1:
             element2 = self.state[0]
 
         # delta_energy = delta**2 - self.ALPHA * delta * (element1 - 2*self.state[loc] + element2)
-        new_energy = -self.ALPHA * delta + 0.5*(element2 - self.state[loc] - delta)**2 + 0.5*(self.state[loc] + delta - element1)**2
+        new_energy = -self.ALPHA * delta + 0.5*self.BETA*(element2 - self.state[loc] - delta)**2 + 0.5*(self.state[loc] + delta - element1)**2
         delta_energy = new_energy - prev_energy
 
         return delta_energy

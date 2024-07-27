@@ -12,13 +12,16 @@ plt.style.use('./ma-style.mplstyle')
 
 bounds = (-50, 0)
 length = 25
-temperature = 1
+temperature = 100
 molecules = np.arange(0, length)
 
 m = Metropolis1(length, temperature, bounds)
-m.EXIT_COND2 = False
-m.STOP_STEPS = 50
-m.EPS = 1e-14
+m.EXIT_COND2 = True
+m.ALPHA = 0.33
+m.BETA = 1
+m.STOP_STEPS = int(1e3)
+m.EPS = 1e-16
+m.MAX_ITER = 1e8
 s_init, s_final, en = m.run()
 
 # Plotting
@@ -47,5 +50,5 @@ if True:
     ax[2].set_title("Temperature Annealing")
 
     plt.tight_layout()
-    plt.savefig("fixed-init.png", dpi=400)
+    plt.savefig("./MolecularChain2/Images/deep-levels.png", dpi=400)
     plt.show()

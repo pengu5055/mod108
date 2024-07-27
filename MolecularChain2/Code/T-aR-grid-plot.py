@@ -49,7 +49,9 @@ delta_steps = np.abs(steps_to_convergence - avg_steps)
 
 end_energy = np.array(end_energy)
 avg_energy = np.mean(end_energy)
-delta_energy = end_energy - avg_energy
+min_energy = np.min(end_energy)
+# This would require a variable rename but I'm too lazy to do that at the moment
+end_energy = end_energy - min_energy
 
 # Plot data as 2 heatmaps
 colors = ["#37123c","#d72483","#ddc4dd","#60afff","#98CE00"]
@@ -65,6 +67,7 @@ sm = plt.cm.ScalarMappable(cmap=cm, norm=norm)
 ax[0].imshow(delta_steps, cmap=cm, aspect="auto", norm=norm,
              extent=[anneal_values[0], anneal_values[-1], T_values[-1], T_values[0]])
 cbar = plt.colorbar(sm, ax=ax[0])
+cbar.set_label("Deviation in Steps")
 cbar.set_ticks(np.logspace(np.log10(delta_steps.min()), np.log10(delta_steps.max()), 10))
 avg_steps_text = f"Avg. Steps: {avg_steps:.2f}\nCMap scaling: $y=x^{{{0.2}}}$"
 ax[0].text(0.05, 0.95, avg_steps_text, transform=ax[0].transAxes,
@@ -74,26 +77,26 @@ ax[0].set_xlabel("Annealing Rate")
 ax[0].set_ylabel("Temperature")
 ax[0].set_title("Deviation from Avg. Steps to Convergence")
 
-
 # Plot 2
 cm = pl.scientific.diverging.Berlin_3.mpl_colormap
-cm = cmr.get_sub_cmap(cm, 0.15, 0.85, N=len(range(int(delta_energy.min()), int(delta_energy.max()))))
-norm = mpl.colors.TwoSlopeNorm(vmin=delta_energy.min(), vmax=delta_energy.max(), vcenter=0)
+cm = cmr.get_sub_cmap(cm, 0.15, 0.85)
+norm = mpl.colors.PowerNorm(gamma=2, vmin=-end_energy.min(), vmax=-end_energy.max())
 sm = plt.cm.ScalarMappable(cmap=cm, norm=norm)
 
-ax[1].imshow(delta_energy, cmap=cm, aspect="auto", norm=norm,
+ax[1].imshow(-end_energy, cmap=cm, aspect="auto", norm=norm,
                 extent=[anneal_values[0], anneal_values[-1], T_values[-1], T_values[0]])
 cbar = plt.colorbar(sm, ax=ax[1])
-manual_ticks = np.array([delta_energy.min(), -20, -10, 0, 100, 500, 750, delta_energy.max()])
-cbar.set_ticks(manual_ticks)
-avg_steps_text = f"Avg. End Energy: {avg_energy:.2f}$"
+cbar.set_label("Deviation in Energy")
+cbar.ax.set_yticklabels([str(-float(ticklabel)) for ticklabel in cbar.ax.get_yticks()])
+
+avg_steps_text = f"Min. Final Energy: ${min_energy:.2f}$\nCMap scaling: $y=x^{{{2}}}$"
 ax[1].text(0.05, 0.95, avg_steps_text, transform=ax[1].transAxes,
            fontsize=12, verticalalignment='top', horizontalalignment='left',
            color='white', bbox=dict(facecolor='black', alpha=0.2, edgecolor='black', boxstyle='round,pad=0.5'))
 
 ax[1].set_xlabel("Annealing Rate")
 ax[1].set_ylabel("Temperature")
-ax[1].set_title("Deviation from Avg. Final Energy")
+ax[1].set_title("Deviation from Min. Final Energy")
 
 plt.tight_layout()
 plt.savefig("./MolecularChain2/Images/T-aR-gridscan.png", dpi=400)
