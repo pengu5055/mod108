@@ -44,7 +44,7 @@ avg_shape = np.mean(shapes, axis=1)
 sigma_shape = np.std(shapes - avg_shape, axis=1)
 avg_avg_shape = np.mean(avg_shape, axis=0)
 avg_sigma = np.std(avg_shape - avg_avg_shape, axis=0)
-print(shapes.shape)
+print(avg_shape[0].shape)
 
 
 # Plot average shape
@@ -59,9 +59,23 @@ ax[0].set_ylabel("State")
 ax[0].set_title(r"Average Shape of Chain across all $T$")
 
 
+# Plot average shape for each T
+colors2 = cmr.take_cmap_colors("cmr.bubblegum", len(T_values))
+print(len(colors2))
+norm = mpl.colors.Normalize(vmin=T_values.min(), vmax=T_values.max())
+sm = plt.cm.ScalarMappable(cmap=cmr.bubblegum, norm=norm)
+
+for i, T in enumerate(T_values):
+    ax[1].plot(molecules, avg_shape[i], color=colors2[i], alpha=0.5, zorder=(100-i))
+
+cbar = fig.colorbar(sm, ax=ax[1])
+cbar.set_label("Temperature")
+ax[1].set_xlabel("Molecule")
+ax[1].set_ylabel("State")
+ax[1].set_title(r"Average Shape of Chain across all $T$")
 
 plt.tight_layout()
-plt.savefig("./MolecularChain2/Images/.png", dpi=400)
+plt.savefig("./MolecularChain2/Images/rand-init-T-spread.png", dpi=400)
 plt.show()
 
 
