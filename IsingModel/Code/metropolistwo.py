@@ -18,10 +18,12 @@ class Metropolis2:
         self.STOP_STEPS = 500
         self.STOP_ENERGIES = 100
         self.EPS = 1e-8
+        self.ANNEAL_RATE = 0.9999
         self.quiet = quiet
 
         self.x_dim, self.y_dim = dimensions
         self.temperature = temperature
+        self.temperatures = [temperature]
         # self.state_bounds = (state_bounds[0], state_bounds[1] + 1)
 
         self.state = np.random.choice([-1, 1], (self.x_dim, self.y_dim))
@@ -62,6 +64,7 @@ class Metropolis2:
             
             if delta_energy <= 0:
                 self.state[i, j] *= -1
+                self.temperature *= self.ANNEAL_RATE
             else:
                 if np.random.rand() < np.exp(-delta_energy / self.temperature):
                     self.state[i, j] *= -1
@@ -77,6 +80,7 @@ class Metropolis2:
             if iter > self.MAX_ITER:
                 break
 
+            self.temperatures.append(self.temperature)
             iter += 1
         
         if not self.quiet:
