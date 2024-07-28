@@ -89,7 +89,7 @@ where $\Delta E$ is the change in energy, $k$ is the Boltzmann constant and $T$ 
 is a bit more involved and probably out of the scope of this report however a dedicated reader can find more information in this 
 well written blog post by Gregory Gundersen of Princeton University \cite{Gundersen_2019}. We can define multiple different 
 exit conditions for the algorithm, such as a fixed number of iterations, a fixed number of accepted moves or an $\varepsilon$ tolerance
-for $\Delta E$. \\
+for $\Delta E$. Really that is all there is to this method from a theory standpoint.\\
 
 \section{Task at Hand}
 \subsection{Molecular Chain}
@@ -139,6 +139,22 @@ and heat capacity is defined as:
     c = \frac{\la E^2\ra - \la E\ra^2}{Nk_BT^2}\>.
 \end{equation}
 \section{Solution Overview}
+This report marks a change in the way I approach these tasks for Model Analysis I. Up until now I've given heavy focus on the quality, optimization 
+and performance of my code and have neglected the actual purpose of the subject, which is the analysis of physical models. The idea was that more 
+advanced code or methods would allow me to do better analysis. However, the overhead of time needed to implement these methods was not worth the
+benefit. I don't think I've ever managed to show the results of my code since I've always been too focused on the code itself. It's time to change
+that. As much as it pains me I will try to employ a \textit{good-enough} approach (aka. the \textit{KISS} principle) and focus on the analysis of
+the models. I will still try to write clean and efficient code but I will not spend too much time on it, especially on paralelization and optimization.
+From a utilitarian perspective it's better to have a working solution that is not optimal than to have an optimal solution that took to long to 
+implement. \\
+
+\subsection{Molecular Chain}
+I stared writing the code for the molecular chain quite a long time ago before I burnt out. I threw all that old code away and started anew. As has 
+become a bit of a habit I created a 1D Metropolis-Hastings solver class \texttt{Metropolis1} which I can then also reuse for the Ising model 
+with minimal adaptations. The advantage of a class-based approach is that I can more easily do parameter sweeps as I can just create a new instance
+of the class with different parameters. Since I wanted to get decent statistics for the molecular chain I had quite strict exit conditions and also 
+many repeat runs for each temperature. This produced quite a massive amount of data which I conveniently stored in a \texttt{HDF5} file. I $\heartsuit$
+\texttt{HDF5}.
 \section{Results}
 \section{Conclusion and Comments}
 

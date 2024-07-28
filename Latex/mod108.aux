@@ -2,10 +2,13 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
 \global\let\oldnewlabel\newlabel
 \gdef\newlabel#1#2{\newlabelxx{#1}#2}
 \gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
 \AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
 \let\newlabel\oldnewlabel
 \fi}
 \fi}
@@ -29,6 +32,7 @@
 \newlabel{eq:spin-susceptibility}{{5}{2}{Ising Model}{equation.2.5}{}}
 \newlabel{eq:heat-capacity}{{6}{2}{Ising Model}{equation.2.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Solution Overview}{2}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Molecular Chain}{2}{subsection.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Results}{2}{section.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion and Comments}{2}{section.5}\protected@file@percent }
 \gdef \@abspage@last{3}
