@@ -16,6 +16,7 @@ class Metropolis2:
         self.H = 0
         self.MAX_ITER = 1000000
         self.STOP_STEPS = 500
+        self.STOP_ENERGIES = 100
         self.EPS = 1e-8
         self.quiet = quiet
 
@@ -67,7 +68,7 @@ class Metropolis2:
 
             self.energies.append(delta_energy)
             if iter > self.STOP_STEPS:
-                exit_cond = np.sum(np.abs(np.diff(self.energies[-1000:])))
+                exit_cond = np.sum(np.abs(np.diff(self.energies[-self.STOP_ENERGIES:])))
                 if exit_cond < self.EPS:
                        break
                 if not self.quiet:

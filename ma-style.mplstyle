@@ -9,6 +9,8 @@ axes.facecolor      : "#ebf9fc"
 axes.grid           : True
 grid.color          : "#737373"
 grid.alpha          : 0.1
+figure.titlesize     : 18
+figure.titleweight : "bold"
 
 # Suggested colors:
 # ["2b193d","2c365e","484d6d","4b8f8c","c5979d"]
