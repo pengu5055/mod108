@@ -20,6 +20,8 @@ class Worker:
         # The fixed state was created randomly in the create-fixed-init.py script, hence the name
         m.state = np.load("./IsingModel/Results/random-state.npy")
         m.MAX_ITER = 1e7
+        m.quiet = True
+        print(f"[INFO] Starting: T={self.T}")
         s_init, s_final, en = m.run()
 
         return s_init, s_final, en, m.temperatures
@@ -33,8 +35,8 @@ def worker_task(params):
 param_list = np.genfromtxt("./IsingModel/Code/T_range.lst")
 param_list = [[par] for par in param_list]
 
-# Run thread pool and save on thread execution
-with concurrent.futures.ThreadPoolExecutor() as executor:
+# Run process pool and save on thread execution
+with concurrent.futures.ProcessPoolExecutor() as executor:
     futures = [executor.submit(worker_task, params) for params in param_list]
     
     # Step 4: Collect the results
