@@ -9,9 +9,14 @@ import matplotlib as mpl
 plt.style.use('./ma-style.mplstyle')
 mpl.use("qtagg")
 
-m = Metropolis2((50, 50), 1)
+
+kB = 1.38e-23
+dim = 50
+m = Metropolis2((dim, dim), 1)
+m.EPS = 100
 m.temperature = 1
-m.MAX_ITER = 10000
+m.J = 1
+m.MAX_ITER = 100000
 s_init, s_final, energies = m.run()
 
 
@@ -27,7 +32,7 @@ ax[1].set_title("Final state")
 ax[1].set_xticks([])
 ax[1].set_yticks([])
 
-plt.suptitle(f"Ising: $500^2$ spins, $T = {m.temperatures[0]:.2e}, ${m.MAX_ITER:.2e} iterations")
+plt.suptitle(f"Ising: ${dim}^2$ spins, $T = {m.temperatures[0]:.2e}, ${m.MAX_ITER:.2e} iterations")
 plt.tight_layout()
-plt.savefig("./IsingModel/Images/isingmodel-random-test-3.png", dpi=400)
+plt.savefig("./IsingModel/Images/isingmodel-random-test-sub.png", dpi=400)
 plt.show()
