@@ -13,7 +13,7 @@ plt.style.use('./ma-style.mplstyle')
 mpl.use("qtagg")
 
 # Simulation parameters
-save_path = "./IsingModel/Results/avgE-vs-T-pool.h5"
+save_path = "./IsingModel/Results/avgE-vs-T-v2.h5"
 bounds = (-18, 0)
 length = 17
 temperature = 1
@@ -78,7 +78,6 @@ ax[0, 0].plot(T_values, avg_energy + sigma_energy, color=colors[0], alpha=1, ls=
 ax[0, 0].fill_between(T_values, avg_energy - sigma_energy, avg_energy + sigma_energy, color=colors[3], alpha=0.3)
 
 
-ax[0, 0].set_xscale("log")
 ax[0, 0].set_ylabel("Average Energy")
 ax[0, 0].set_xlabel("Temperature")
 ax[0, 0].set_title(r"Avg. Final Energy Over $100$ Runs")
@@ -90,7 +89,6 @@ ax[0, 1].plot(T_values, avg_steps - sigma_steps, color=colors[0], alpha=1, ls="-
 ax[0, 1].plot(T_values, avg_steps + sigma_steps, color=colors[0], alpha=1, ls="--")
 ax[0, 1].fill_between(T_values, avg_steps - sigma_steps, avg_steps + sigma_steps, color=colors[3], alpha=0.3)
 
-ax[0, 1].set_xscale("log")
 ax[0, 1].set_ylabel("Average Steps to Convergence")
 ax[0, 1].set_xlabel("Temperature")
 ax[0, 1].set_title(r"Avg. Steps to Convergence Over $100$ Runs")
