@@ -14,7 +14,8 @@ kB = 1.38e-23
 dim = 50
 m = Metropolis2((dim, dim), 1)
 m.EPS = 100
-m.temperature = 8
+m.temperature = 2
+m.H = 1e-8
 m.J = 1
 m.MAX_ITER = 100000
 s_init, s_final, energies = m.run()
@@ -34,5 +35,5 @@ ax[1].set_yticks([])
 
 plt.suptitle(f"Ising: ${dim}^2$ spins, $T = {m.temperatures[0]:.2e}, ${m.MAX_ITER:.2e} iterations")
 plt.tight_layout()
-plt.savefig("./IsingModel/Images/isingmodel-random-test-sub.png", dpi=400)
+plt.savefig("./IsingModel/Images/isingmodel-random-test-H-field.png", dpi=400)
 plt.show()
