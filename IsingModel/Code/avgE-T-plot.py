@@ -13,7 +13,7 @@ plt.style.use('./ma-style.mplstyle')
 mpl.use("qtagg")
 
 # Simulation parameters
-save_path = "./IsingModel/Results/avgE-vs-T-v2.h5"
+save_path = "./IsingModel/Results/avgE-vs-T-fixedscale.h5"
 bounds = (-18, 0)
 length = 17
 temperature = 1
@@ -28,29 +28,23 @@ end_temperature = []
 to_delete = []
 # Load data
 with h5py.File(save_path, "r") as f:
-    num_runs = len(f.keys())
+    num_runs = 100
 
     for i, T in enumerate(T_values):
         row_steps = []
         row_end_energy = []
         row_end_temperature = []
-        key = f"{T}"
-        try:
+
+        for run in range(num_runs):
+            key = f"{T}-{run}"
             group = f[key]
-        except KeyError:
-            print(f"Missing data: {key}")
-            to_delete.append(i)
-            continue
-        row_steps.append(len(group[f"energy-{key}"]))
-        row_end_energy.append(group[f"energy-{key}"][-1])
-        row_end_temperature.append(group[f"temperature-{key}"][-1])
+            row_steps.append(len(group[f"energy-{key}"]))
+            row_end_energy.append(group[f"energy-{key}"][-1])
+            row_end_temperature.append(group[f"temperature-{key}"][-1])
 
         steps_to_convergence.append(row_steps)  
         end_energy.append(row_end_energy)
         end_temperature.append(row_end_temperature)
-
-# Remove missing data
-T_values = np.delete(T_values, to_delete)
 
 # Calculate statistics
 steps_to_convergence = np.array(steps_to_convergence)
@@ -75,20 +69,23 @@ fig, ax = plt.subplots(2, 2, figsize=(12, 9))
 ax[0, 0].plot(T_values, avg_energy, color=colors[1], alpha=1, lw=3, label="Average Energy")
 ax[0, 0].plot(T_values, avg_energy - sigma_energy, color=colors[0], alpha=1, ls="--")
 ax[0, 0].plot(T_values, avg_energy + sigma_energy, color=colors[0], alpha=1, ls="--")
-ax[0, 0].fill_between(T_values, avg_energy - sigma_energy, avg_energy + sigma_energy, color=colors[3], alpha=0.3)
+ax[0, 0].fill_between(T_values, avg_energy - sigma_energy, avg_energy + sigma_energy, 
+                      color=colors[3], alpha=0.3, label="1-$\sigma$ Band")
 
-
+ax[0, 0].legend(frameon=False)
 ax[0, 0].set_ylabel("Average Energy")
 ax[0, 0].set_xlabel("Temperature")
 ax[0, 0].set_title(r"Avg. Final Energy Over $100$ Runs")
 
 
 # Average steps to convergence vs. temperature
-ax[0, 1].plot(T_values, avg_steps, color=colors[1], alpha=1, lw=3, label="Average Energy")
+ax[0, 1].plot(T_values, avg_steps, color=colors[1], alpha=1, lw=3, label="Average Steps")
 ax[0, 1].plot(T_values, avg_steps - sigma_steps, color=colors[0], alpha=1, ls="--")
 ax[0, 1].plot(T_values, avg_steps + sigma_steps, color=colors[0], alpha=1, ls="--")
-ax[0, 1].fill_between(T_values, avg_steps - sigma_steps, avg_steps + sigma_steps, color=colors[3], alpha=0.3)
+ax[0, 1].fill_between(T_values, avg_steps - sigma_steps, avg_steps + sigma_steps, 
+                      color=colors[3], alpha=0.3, label="1-$\sigma$ Band")
 
+ax[0, 1].legend(frameon=False)
 ax[0, 1].set_ylabel("Average Steps to Convergence")
 ax[0, 1].set_xlabel("Temperature")
 ax[0, 1].set_title(r"Avg. Steps to Convergence Over $100$ Runs")
