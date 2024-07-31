@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{wrapfig}
+\usepackage{float}
 \hypersetup{colorlinks=true}
 
 % Load the natbib package for citation style
@@ -181,7 +182,9 @@ become a bit of a habit I created a 1D Metropolis-Hastings solver class \texttt{
 with minimal adaptations. The advantage of a class-based approach is that I can more easily do parameter sweeps as I can just create a new instance
 of the class with different parameters. Since I wanted to get decent statistics for the molecular chain I had quite strict exit conditions and also 
 many repeat runs for each temperature. This produced quite a massive amount of data which I conveniently stored in a \texttt{HDF5} file. I $\heartsuit$
-\texttt{HDF5}. \\
+\texttt{HDF5}. It is also worth mentioning that I implemented a rudimentary form of \textbf{Simulated Annealing} by slowly decreasing the 
+temperature on each good move. The so-called annealing factor was set to $0.9999$ by default. Results of the sweep of this parameter are 
+displayed in the results section. \\
 
 I started of by just running the code and plotting a few results to see if everything is working 
 as expected. A nice result is displayed in Figure (\ref{fig:molecular-demo}) where the average of $100$ runs is shown 
@@ -189,7 +192,7 @@ for the final state of the molecular chain as well as the scatter of the final t
 the initial state is fixed. The aim of this plot is to display the working of the Metropolis-Hastings algorithm and its 
 convergence to a final state. 
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=.95\textwidth]{../fixed-init-multiple.png}
     \caption{Final state, Temperature, Energy scatter over runs for the molecular chain at a fixed initial state.}
@@ -200,12 +203,25 @@ It was here that I also experimented slightly with the parameters of the chain, 
 For example I managed to find a state that optimized almost to a chain link but since one of the molecules was on the top level it tried to make 
 two chain links, as displayed in Figure (\ref{fig:chain-link}). 
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=.95\textwidth]{../accidental-veriznica.png}
     \caption{Optimized state of the molecular chain that almost forms a double chain link.}
     \label{fig:chain-link}
 \end{figure}
+
+I also trid maximize the \textit{curlyness} of the chain by modifiying the coefficients of the energy function. One of my better attempts is plotted 
+in Figure (\ref{fig:curly-chain}), where the elastic energy term is set to be $10$ times larger.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textwidth]{../curly-boi-Beta10.png}
+    \caption{Optimized state of the molecular chain that is maximally curly.}
+    \label{fig:curly-chain}
+\end{figure}
+
+The rest of the results for the molecular chain are displayed in the results section as I think they are more than just intermediate results or 
+random observations.
 
 \subsection{Ising Model}
 After (re)writing the code for the molecular chain I adapted it for the Ising model, creating a solver class \texttt{Metropolis2}. I had a few problems
@@ -218,6 +234,31 @@ style of parallelization is reasonable as it takes very little time to implement
 a brief overview of how \texttt{ProcessPoolExecutor} is used:
 
 \lstinputlisting[language=Python]{code-demo.txt}
+
+Anyways, let's get to some images. Like before some debug style plots at the beginning definitely do not hurt. I wanted to get a feel for where the 
+critical temperature is and how long it takes to reach equilibrium. For the purpose of nicer images I ran the simulation for a $500\times 500$ lattice, 
+as the professor commented that this size would give nice-looking results. Figure (\ref{fig:ising-demo-subcritical}) shows the initial and 
+final states of the lattice at a subcritical temperature of $T=1$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textwidth]{../IsingModel/Images/ising-demo-subcritical.png}
+    \caption{Initial and final states of the Ising model lattice at a subcritical temperature of $T=1$.}
+    \label{fig:ising-demo-subcritical}
+\end{figure}
+
+We can see that the lattice is in a ferromagnetic state and that magnetic domains have nicely formed. The lattice is drastically different 
+from the initial state. It now only makes sense to take a look at a supercritical temperature of $T=10$ which is displayed 
+in Figure (\ref{fig:ising-demo-supercritical}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textwidth]{../IsingModel/Images/ising-demo-supercritical.png}
+    \caption{Initial and final states of the Ising model lattice at a supercritical temperature of $T=10$.}
+    \label{fig:ising-demo-supercritical}
+\end{figure}
+
+
 
 \section{Results}
 \subsection{Molecular Chain}

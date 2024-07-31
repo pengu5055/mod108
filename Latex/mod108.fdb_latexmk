@@ -1,17 +1,20 @@
 # Fdb version 3
-["bibtex mod108"] 1722442357 "mod108.aux" "mod108.bbl" "mod108" 1722442359
+["bibtex mod108"] 1722443989 "mod108.aux" "mod108.bbl" "mod108" 1722445529
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "mod108.aux" 1722442359 3182 f9c443a0f4e8a26b736d9590d572e8b0 "pdflatex"
+  "mod108.aux" 1722445529 4175 ee9d5cd08a058808cd2d462396b433a2 "pdflatex"
   "mod108.bib" 1721863929 280 1083cc94409ae67f7742ae8149dc5435 ""
   (generated)
   "mod108.bbl"
   "mod108.blg"
-["pdflatex"] 1722442357 "/home/pengu5055/Documents/FMF1mag/mod108/Latex/mod108.tex" "mod108.pdf" "mod108" 1722442359
+["pdflatex"] 1722445521 "/home/pengu5055/Documents/FMF1mag/mod108/Latex/mod108.tex" "mod108.pdf" "mod108" 1722445529
+  "../IsingModel/Images/ising-demo-subcritical.png" 1722443525 291944 d8e5da43a695a8a548748a2c642c3f94 ""
+  "../IsingModel/Images/ising-demo-supercritical.png" 1722445513 405785 4078c0006c2145624591251e13e88624 ""
   "../accidental-veriznica.png" 1722112815 407625 9320256e0cf012df69cc71017b528668 ""
+  "../curly-boi-Beta10.png" 1722113297 96954 351e9b8b00fe5aa92271ed8b23b0249a ""
   "../fixed-init-multiple.png" 1721905605 495754 3b196c26752daabbd89e6783641cb166 ""
   "/etc/texmf/web2c/texmf.cnf" 1721132218 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/pengu5055/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1721133484 1405652 6dbe6b4a0b8b03aa67147fe2fddcad95 ""
-  "/home/pengu5055/Documents/FMF1mag/mod108/Latex/mod108.tex" 1722442355 11147 13788c461a9355ad1830cbde7a1508bc ""
+  "/home/pengu5055/Documents/FMF1mag/mod108/Latex/mod108.tex" 1722443976 13501 dc9d3293d800de4624f55240139571d9 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -59,6 +62,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty" 1636758526 2462 754d6b31b2ab5a09bb72c348ace2ec75 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1636758526 8448 96f18c76bf608a36ee6fbf021ac1dd32 ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
+  "/usr/share/texlive/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
@@ -94,11 +98,11 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1721229899 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "code-demo.txt" 1722438054 937 b92eba309c8ebb37e02a77b61ac689fa ""
   "logo_fmf.pdf" 1721863929 15612 f362f770ef36c22b3204cc12be10dccd ""
-  "mod108.aux" 1722442359 3182 f9c443a0f4e8a26b736d9590d572e8b0 "pdflatex"
-  "mod108.bbl" 1722442357 290 fa4b7007bfae80c4af14b74da5c31be0 "bibtex mod108"
-  "mod108.out" 1722442359 1221 1dba0aba6d3659e0ed4e1488cc2bf35f "pdflatex"
-  "mod108.tex" 1722442355 11147 13788c461a9355ad1830cbde7a1508bc ""
-  "mod108.toc" 1722442359 748 8f88dc7e8b65fe3f2594356b712db615 "pdflatex"
+  "mod108.aux" 1722445529 4175 ee9d5cd08a058808cd2d462396b433a2 "pdflatex"
+  "mod108.bbl" 1722443989 290 fa4b7007bfae80c4af14b74da5c31be0 "bibtex mod108"
+  "mod108.out" 1722445529 1221 1dba0aba6d3659e0ed4e1488cc2bf35f "pdflatex"
+  "mod108.tex" 1722443976 13501 dc9d3293d800de4624f55240139571d9 ""
+  "mod108.toc" 1722445529 748 28adfc493da829fa6e14c344e334d35a "pdflatex"
   (generated)
   "mod108.aux"
   "mod108.log"

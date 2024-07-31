@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.16)  31 JUL 2024 18:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.16)  31 JUL 2024 19:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -169,32 +169,39 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \WF@box=\box50
 \WF@everypar=\toks18
 Package: wrapfig 2003/01/31  v 3.6
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count273
+\float@exts=\toks19
+\float@box=\box51
+\@float@everytoks=\toks20
+\@floatcapt=\box52
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 11.
+Package hyperref Info: Option `colorlinks' set `true' on input line 12.
  (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip50
 \bibsep=\skip51
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count273
+\c@NAT@ctr=\count274
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count274
-\lst@gtempboxa=\box51
-\lst@token=\toks19
-\lst@length=\count275
+\lst@mode=\count275
+\lst@gtempboxa=\box53
+\lst@token=\toks21
+\lst@length=\count276
 \lst@currlwidth=\dimen155
-\lst@column=\count276
-\lst@pos=\count277
+\lst@column=\count277
+\lst@pos=\count278
 \lst@lostspace=\dimen156
 \lst@width=\dimen157
-\lst@newlines=\count278
-\lst@lineno=\count279
+\lst@newlines=\count279
+\lst@lineno=\count280
 \lst@maxwidth=\dimen158
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count280
-\lst@skipnumbers=\count281
-\lst@framebox=\box52
+\c@lstnumber=\count281
+\lst@skipnumbers=\count282
+\lst@framebox=\box54
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
@@ -216,29 +223,29 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count282
-\l__pdf_internal_box=\box53
+\l__color_backend_stack_int=\count283
+\l__pdf_internal_box=\box55
 ) (./mod108.aux)
 \openout1 = `mod108.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -276,24 +283,24 @@ LaTeX Font Info:    ... okay on input line 60.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count283
+\scratchcounter=\count284
 \scratchdimen=\dimen159
-\scratchbox=\box54
-\nofMPsegments=\count284
-\nofMParguments=\count285
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count286
+\scratchbox=\box56
+\nofMPsegments=\count285
+\nofMParguments=\count286
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count287
 \MPscratchDim=\dimen160
-\MPnumerator=\count287
-\makeMPintoPDFobject=\count288
-\everyMPtoPDFconversion=\toks21
+\MPnumerator=\count288
+\makeMPintoPDFobject=\count289
+\everyMPtoPDFconversion=\toks23
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 60.
+Package hyperref Info: Link coloring ON on input line 61.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -301,25 +308,25 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count289
+\c@section@level=\count290
 )
-LaTeX Info: Redefining \ref on input line 60.
-LaTeX Info: Redefining \pageref on input line 60.
-LaTeX Info: Redefining \nameref on input line 60.
+LaTeX Info: Redefining \ref on input line 61.
+LaTeX Info: Redefining \pageref on input line 61.
+LaTeX Info: Redefining \nameref on input line 61.
  (./mod108.out) (./mod108.out)
 \@outlinefile=\write3
 \openout3 = `mod108.out'.
 
-\c@lstlisting=\count290
+\c@lstlisting=\count291
 <logo_fmf.pdf, id=44, 233.03412pt x 141.6228pt>
 File: logo_fmf.pdf Graphic file (type pdf)
 <use logo_fmf.pdf>
-Package pdftex.def Info: logo_fmf.pdf  used on input line 65.
+Package pdftex.def Info: logo_fmf.pdf  used on input line 66.
 (pdftex.def)             Requested size: 170.71652pt x 103.75114pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo_fmf.pdf>]
-Package hyperref Info: Option `pageanchor' set `true' on input line 88.
+Package hyperref Info: Option `pageanchor' set `true' on input line 89.
  (./mod108.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
@@ -330,65 +337,105 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout4 = `mod108.toc'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--102
+Underfull \hbox (badness 10000) in paragraph at lines 99--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--120
+Underfull \hbox (badness 10000) in paragraph at lines 114--121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--127
+Underfull \hbox (badness 10000) in paragraph at lines 124--128
 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.135 \end{equation}
+l.136 \end{equation}
                      [1]
-Underfull \hbox (badness 10000) in paragraph at lines 169--177
+Underfull \hbox (badness 10000) in paragraph at lines 170--178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
+Underfull \hbox (badness 10000) in paragraph at lines 180--188
 
  []
 
 <../fixed-init-multiple.png, id=94, 867.24pt x 361.35pt>
 File: ../fixed-init-multiple.png Graphic file (type png)
 <use ../fixed-init-multiple.png>
-Package pdftex.def Info: ../fixed-init-multiple.png  used on input line 194.
+Package pdftex.def Info: ../fixed-init-multiple.png  used on input line 197.
 (pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
-<../accidental-veriznica.png, id=97, 722.7pt x 361.35pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2]
+<../accidental-veriznica.png, id=110, 722.7pt x 361.35pt>
 File: ../accidental-veriznica.png Graphic file (type png)
 <use ../accidental-veriznica.png>
-Package pdftex.def Info: ../accidental-veriznica.png  used on input line 205.
+Package pdftex.def Info: ../accidental-veriznica.png  used on input line 208.
 (pdftex.def)             Requested size: 432.48051pt x 216.23824pt.
-[2] [3 <../fixed-init-multiple.png> <../accidental-veriznica.png>] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+<../curly-boi-Beta10.png, id=112, 722.7pt x 361.35pt>
+File: ../curly-boi-Beta10.png Graphic file (type png)
+<use ../curly-boi-Beta10.png>
+Package pdftex.def Info: ../curly-boi-Beta10.png  used on input line 218.
+(pdftex.def)             Requested size: 432.48051pt x 216.23824pt.
+ [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.222 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.222 
+       <../fixed-init-multiple.png> <../accidental-veriznica.png>] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 220.
- (./code-demo.txt) (./mod108.bbl) [4] (./mod108.aux)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 236.
+ (./code-demo.txt [4pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.30  
+             run, s_init, s_final, en, temps = future.result() <../curly-boi-Beta10.png>])
+<../IsingModel/Images/ising-demo-subcritical.png, id=159, 867.24pt x 361.35pt>
+File: ../IsingModel/Images/ising-demo-subcritical.png Graphic file (type png)
+<use ../IsingModel/Images/ising-demo-subcritical.png>
+Package pdftex.def Info: ../IsingModel/Images/ising-demo-subcritical.png  used on input line 245.
+(pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
+<../IsingModel/Images/ising-demo-supercritical.png, id=161, 867.24pt x 361.35pt>
+File: ../IsingModel/Images/ising-demo-supercritical.png Graphic file (type png)
+<use ../IsingModel/Images/ising-demo-supercritical.png>
+Package pdftex.def Info: ../IsingModel/Images/ising-demo-supercritical.png  used on input line 256.
+(pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
+ (./mod108.bbl) [5pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.276 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.276 \end{document}
+                     <../IsingModel/Images/ising-demo-subcritical.png> <../IsingModel/Images/ising-demo-supercritical.png>] (./mod108.aux)
 Package rerunfilecheck Info: File `mod108.out' has not changed.
 (rerunfilecheck)             Checksum: 1DBA0ABA6D3659E0ED4E1488CC2BF35F;1221.
  ) 
 Here is how much of TeX's memory you used:
- 11413 strings out of 480247
- 172436 string characters out of 5896151
- 855427 words of memory out of 5000000
- 29177 multiletter control sequences out of 15000+600000
+ 11508 strings out of 480247
+ 174541 string characters out of 5896151
+ 831650 words of memory out of 5000000
+ 29260 multiletter control sequences out of 15000+600000
  472663 words of font info for 40 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,6n,63p,292b,1377s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,6n,63p,292b,2084s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on mod108.pdf (5 pages, 1037795 bytes).
+Output written on mod108.pdf (6 pages, 2361182 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 186 compressed objects within 2 object streams
- 58 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 250 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
