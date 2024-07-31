@@ -22,24 +22,19 @@ def heat_capacity(states: np.ndarray, temperature: np.ndarray):
 
 
 # Load the file
-save_path = "./IsingModel/Results/H-analysis-v2.h5"
+save_path = "./IsingModel/Results/H-expanded.h5"
 H_values = np.loadtxt("./IsingModel/Code/H_range.lst")
 energies = []
-chi = []
-c = []
 with h5py.File(save_path, "r") as f:
     # for block in np.arange(10, 100, 10):
         for H in H_values:
             key = f"{H}-0"
             group = f[key]
-            chi.append(susceptibility(group[f"state-{key}"][:], 1))
-            c.append(heat_capacity(group[f"state-{key}"][:], 1))
+            energies.append(group[f"energy-{key}"][80002:])
 
-chi = np.array(chi)
-c = np.array(c)
-print(chi.shape, c.shape)
-np.save("./IsingModel/Results/chi-v2.npy", chi)
-np.save("./IsingModel/Results/c-v2.npy", c)
+energies = np.array(energies)
+print(energies.shape)
+np.save("./IsingModel/Results/E-expanded.npy", energies)
 
         
  
