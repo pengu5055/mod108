@@ -13,7 +13,7 @@ plt.style.use('./ma-style.mplstyle')
 mpl.use("qtagg")
 
 # Simulation parameters
-save_path = "./IsingModel/Results/avgE-vs-T-fixedscale.h5"
+save_path = "./IsingModel/Results/avgE-vs-T-v3.h5"
 bounds = (-18, 0)
 length = 17
 temperature = 1
@@ -72,6 +72,8 @@ S = np.abs(magnetization(end_states))
 avgS = np.mean(S, axis=1)
 sigmaS = np.std(S, axis=1)
 
+crit_T = 2.27
+
 # Plot data as 3 subplots
 colors = ["#37123c","#d72483","#ddc4dd","#60afff","#98CE00"]
 
@@ -84,6 +86,7 @@ ax[0, 0].plot(T_values, avg_energy + sigma_energy, color=colors[0], alpha=1, ls=
 ax[0, 0].fill_between(T_values, avg_energy - sigma_energy, avg_energy + sigma_energy, 
                       color=colors[3], alpha=0.3, label="1-$\sigma$ Band")
 
+ax[0, 0].axvline(crit_T, color=colors[4], linestyle='--', label=r"$T_{\mathrm{crit}}$")
 ax[0, 0].legend(frameon=False)
 ax[0, 0].set_ylabel("Average Energy [arb. units]")
 ax[0, 0].set_xlabel("Temperature")
@@ -97,6 +100,7 @@ ax[0, 1].plot(T_values, avgS + sigmaS, color=colors[0], alpha=1, ls="--")
 ax[0, 1].fill_between(T_values, avgS - sigmaS, avgS + sigmaS, 
                       color=colors[3], alpha=0.3, label="1-$\sigma$ Band")
 
+ax[0, 1].axvline(crit_T, color=colors[4], linestyle='--', label=r"$T_{\mathrm{crit}}$")
 ax[0, 1].legend(frameon=False)
 ax[0, 1].set_ylabel("|Average Magnetization| [arb. units]")
 ax[0, 1].set_xlabel("Temperature")
@@ -130,5 +134,5 @@ ax[1, 1].set_xlabel("Temperature")
 ax[1, 1].set_title("|Magnetizaion| Spread Across Runs")  
 
 plt.tight_layout()
-plt.savefig("./IsingModel/Images/avgE-avgS-vs-T.png", dpi=500)
+plt.savefig("./IsingModel/Images/avgE-avgS-vs-T-v2.png", dpi=500)
 plt.show()

@@ -13,7 +13,7 @@ plt.style.use('./ma-style.mplstyle')
 mpl.use("qtagg")
 
 # Simulation parameters
-save_path = "./IsingModel/Results/avgE-vs-T-fixedscale.h5"
+save_path = "./IsingModel/Results/avgE-vs-T-v3.h5"
 bounds = (-18, 0)
 length = 17
 temperature = 1
@@ -118,5 +118,5 @@ ax[1, 1].set_xlabel("Temperature")
 ax[1, 1].set_title("Steps to Convergence Spread Across Runs")  
 
 plt.tight_layout()
-plt.savefig("./IsingModel/Images/avgE-vs-T.png", dpi=500)
+plt.savefig("./IsingModel/Images/avgE-vs-T-v2.png", dpi=500)
 plt.show()
