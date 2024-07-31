@@ -12,7 +12,7 @@ plt.style.use('./ma-style.mplstyle')
 mpl.use("qtagg")
 
 # Simulation parameters
-m = Metropolis2((500, 500), 2.269185)
+m = Metropolis2((500, 500), 10)
 m.EPS = 10
 m.state_bounds = (-2, 2)
 m.MAX_ITER = int(2*1e7)
@@ -49,5 +49,5 @@ ax[1].set_xticks([])
 ax[1].set_yticks([])
 
 plt.tight_layout()
-plt.savefig("./IsingModel/Images/expanded-state-critical.png", dpi=500)
+plt.savefig("./IsingModel/Images/expanded-state-supercritical.png", dpi=500)
 plt.show()
