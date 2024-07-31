@@ -64,7 +64,7 @@ with concurrent.futures.ProcessPoolExecutor(max_workers=16) as executor:
         run, s_init, s_final, en, temps = future.result()
         arg1 = temps[0]
         arg2 = run
-        save_path = "./IsingModel/Results/avgE-vs-T-fixedscale.h5"
+        save_path = "./IsingModel/Results/avgE-vs-T-v3.h5"
         print(f"Storing run {arg1},{arg2} to '{save_path}'..")
         write_data(save_path, f"{arg1}-{arg2}", s_final, en, temps, lock)
         print(f"Saved!")
