@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.16)  31 JUL 2024 17:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.16)  31 JUL 2024 18:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -311,7 +311,7 @@ LaTeX Info: Redefining \nameref on input line 60.
 \openout3 = `mod108.out'.
 
 \c@lstlisting=\count290
-<logo_fmf.pdf, id=40, 233.03412pt x 141.6228pt>
+<logo_fmf.pdf, id=44, 233.03412pt x 141.6228pt>
 File: logo_fmf.pdf Graphic file (type pdf)
 <use logo_fmf.pdf>
 Package pdftex.def Info: logo_fmf.pdf  used on input line 65.
@@ -353,27 +353,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--177
 
  []
 
-[2] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--185
+
+ []
+
+<../fixed-init-multiple.png, id=94, 867.24pt x 361.35pt>
+File: ../fixed-init-multiple.png Graphic file (type png)
+<use ../fixed-init-multiple.png>
+Package pdftex.def Info: ../fixed-init-multiple.png  used on input line 194.
+(pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
+<../accidental-veriznica.png, id=97, 722.7pt x 361.35pt>
+File: ../accidental-veriznica.png Graphic file (type png)
+<use ../accidental-veriznica.png>
+Package pdftex.def Info: ../accidental-veriznica.png  used on input line 205.
+(pdftex.def)             Requested size: 432.48051pt x 216.23824pt.
+[2] [3 <../fixed-init-multiple.png> <../accidental-veriznica.png>] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 196.
- (./code-demo.txt) (./mod108.bbl) [3] (./mod108.aux)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 220.
+ (./code-demo.txt) (./mod108.bbl) [4] (./mod108.aux)
 Package rerunfilecheck Info: File `mod108.out' has not changed.
-(rerunfilecheck)             Checksum: 7788F02CB067F1DD2FD2E7AF15262DFA;1085.
+(rerunfilecheck)             Checksum: 1DBA0ABA6D3659E0ED4E1488CC2BF35F;1221.
  ) 
 Here is how much of TeX's memory you used:
- 11389 strings out of 480247
- 171903 string characters out of 5896151
- 853534 words of memory out of 5000000
- 29161 multiletter control sequences out of 15000+600000
+ 11413 strings out of 480247
+ 172436 string characters out of 5896151
+ 855427 words of memory out of 5000000
+ 29177 multiletter control sequences out of 15000+600000
  472663 words of font info for 40 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,6n,63p,261b,1377s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,6n,63p,292b,1377s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on mod108.pdf (4 pages, 198412 bytes).
+Output written on mod108.pdf (5 pages, 1037795 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 54 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

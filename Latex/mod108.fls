@@ -534,6 +534,16 @@ INPUT mod108.toc
 OUTPUT mod108.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT ../fixed-init-multiple.png
+INPUT ../fixed-init-multiple.png
+INPUT ../fixed-init-multiple.png
+INPUT ../fixed-init-multiple.png
+INPUT ../fixed-init-multiple.png
+INPUT ../accidental-veriznica.png
+INPUT ../accidental-veriznica.png
+INPUT ../accidental-veriznica.png
+INPUT ../accidental-veriznica.png
+INPUT ../accidental-veriznica.png
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
