@@ -258,14 +258,27 @@ in Figure (\ref{fig:ising-demo-supercritical}).
     \label{fig:ising-demo-supercritical}
 \end{figure}
 
+The lattice looks very simmilar to the initial state which is expected as we do not expect spontaneous magnetization at supercritical temperatures.
 I was also interested in how the lattice behaves at the critical temperature, which is forcasted by the Onsager solution (\ref{eq:onsager}) to be
 $T_c\approx 2.269185$. The result is displayed in Figure (\ref{fig:ising-demo-critical}).
 
 \begin{figure}[H]
     \centering
-    %\includegraphics[width=.95\textwidth]{../IsingModel/Images/ising-demo-critical.png}
+    \includegraphics[width=.95\textwidth]{../IsingModel/Images/ising-demo-critical.png}
     \caption{Initial and final states of the Ising model lattice at the critical temperature of $T\approx 2.269185$.}
     \label{fig:ising-demo-critical}
+\end{figure}
+
+The lattice is sort of a mix between the subcritical and supercritical states, which is exactly what we expect. Visually it looks like a grainyer
+version of the ferromagnetic state. As a final little debug plot I wanted to see what a state would look like if I allowed more than just 
+$|\ua\ra$ and $|\da\ra$ states. As an attempt at a generalization to $s=3/2$ particles I allowed for states to go from $-2$ to $2$. The result of 
+optimizing such a lattice with the same Hamiltonian is displayed in Figure (\ref{fig:ising-demo-3/2}).
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=.95\textwidth]{../IsingModel/Images/ising-demo-3-2.png}
+    \caption{Initial and final states of the Ising model lattice with $s=3/2$ particles.}
+    \label{fig:ising-demo-3/2}
 \end{figure}
 
 
