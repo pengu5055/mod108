@@ -15,6 +15,7 @@ m = Metropolis2((dim, dim), 2.269185)
 m.EPS = 10
 m.MAX_ITER = int(1e7)
 m.ANNEAL_RATE = 1
+m.J = -1
 s_init, s_final, energies = m.run()
 
 
@@ -32,5 +33,5 @@ ax[1].set_yticks([])
 
 plt.suptitle(f"Ising: ${dim}^2$ spins, T = ${m.temperatures[0]:.2f}$, ${m.MAX_ITER:.2e}$ iterations")
 plt.tight_layout()
-plt.savefig("./IsingModel/Images/ising-demo-critical", dpi=500)
+plt.savefig("./IsingModel/Images/ising-anti-critical", dpi=500)
 plt.show()

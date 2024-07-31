@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.16)  31 JUL 2024 23:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.16)  1 AUG 2024 00:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -318,7 +318,7 @@ LaTeX Info: Redefining \nameref on input line 61.
 \openout3 = `mod108.out'.
 
 \c@lstlisting=\count291
-<logo_fmf.pdf, id=44, 233.03412pt x 141.6228pt>
+<logo_fmf.pdf, id=48, 233.03412pt x 141.6228pt>
 File: logo_fmf.pdf Graphic file (type pdf)
 <use logo_fmf.pdf>
 Package pdftex.def Info: logo_fmf.pdf  used on input line 66.
@@ -365,7 +365,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--188
 
  []
 
-<../fixed-init-multiple.png, id=94, 867.24pt x 361.35pt>
+<../fixed-init-multiple.png, id=99, 867.24pt x 361.35pt>
 File: ../fixed-init-multiple.png Graphic file (type png)
 <use ../fixed-init-multiple.png>
 Package pdftex.def Info: ../fixed-init-multiple.png  used on input line 197.
@@ -374,12 +374,12 @@ Package pdftex.def Info: ../fixed-init-multiple.png  used on input line 197.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2]
-<../accidental-veriznica.png, id=110, 722.7pt x 361.35pt>
+<../accidental-veriznica.png, id=115, 722.7pt x 361.35pt>
 File: ../accidental-veriznica.png Graphic file (type png)
 <use ../accidental-veriznica.png>
 Package pdftex.def Info: ../accidental-veriznica.png  used on input line 208.
 (pdftex.def)             Requested size: 432.48051pt x 216.23824pt.
-<../curly-boi-Beta10.png, id=112, 722.7pt x 361.35pt>
+<../curly-boi-Beta10.png, id=117, 722.7pt x 361.35pt>
 File: ../curly-boi-Beta10.png Graphic file (type png)
 <use ../curly-boi-Beta10.png>
 Package pdftex.def Info: ../curly-boi-Beta10.png  used on input line 218.
@@ -401,17 +401,17 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
                                                   \__shipout_drop_firstpage_...
 l.30  
              run, s_init, s_final, en, temps = future.result() <../curly-boi-Beta10.png>])
-<../IsingModel/Images/ising-demo-subcritical.png, id=159, 867.24pt x 361.35pt>
+<../IsingModel/Images/ising-demo-subcritical.png, id=164, 867.24pt x 361.35pt>
 File: ../IsingModel/Images/ising-demo-subcritical.png Graphic file (type png)
 <use ../IsingModel/Images/ising-demo-subcritical.png>
 Package pdftex.def Info: ../IsingModel/Images/ising-demo-subcritical.png  used on input line 246.
 (pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
-<../IsingModel/Images/ising-demo-supercritical.png, id=161, 867.24pt x 361.35pt>
+<../IsingModel/Images/ising-demo-supercritical.png, id=166, 867.24pt x 361.35pt>
 File: ../IsingModel/Images/ising-demo-supercritical.png Graphic file (type png)
 <use ../IsingModel/Images/ising-demo-supercritical.png>
 Package pdftex.def Info: ../IsingModel/Images/ising-demo-supercritical.png  used on input line 257.
 (pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
-<../IsingModel/Images/ising-demo-critical.png, id=164, 867.24pt x 361.35pt>
+<../IsingModel/Images/ising-demo-critical.png, id=169, 867.24pt x 361.35pt>
 File: ../IsingModel/Images/ising-demo-critical.png Graphic file (type png)
 <use ../IsingModel/Images/ising-demo-critical.png>
 Package pdftex.def Info: ../IsingModel/Images/ising-demo-critical.png  used on input line 268.
@@ -425,12 +425,12 @@ l.272
                                                   \__shipout_drop_firstpage_...
 l.272 
        <../IsingModel/Images/ising-demo-subcritical.png> <../IsingModel/Images/ising-demo-supercritical.png>]
-<../IsingModel/Images/expanded-state-subcritical.png, id=178, 867.24pt x 361.35pt>
+<../IsingModel/Images/expanded-state-subcritical.png, id=183, 867.24pt x 361.35pt>
 File: ../IsingModel/Images/expanded-state-subcritical.png Graphic file (type png)
 <use ../IsingModel/Images/expanded-state-subcritical.png>
 Package pdftex.def Info: ../IsingModel/Images/expanded-state-subcritical.png  used on input line 280.
 (pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
-<../IsingModel/Images/expanded-state-critical.png, id=180, 867.24pt x 361.35pt>
+<../IsingModel/Images/expanded-state-critical.png, id=185, 867.24pt x 361.35pt>
 File: ../IsingModel/Images/expanded-state-critical.png Graphic file (type png)
 <use ../IsingModel/Images/expanded-state-critical.png>
 Package pdftex.def Info: ../IsingModel/Images/expanded-state-critical.png  used on input line 292.
@@ -444,7 +444,7 @@ l.296
                                                   \__shipout_drop_firstpage_...
 l.296 
        <../IsingModel/Images/ising-demo-critical.png> <../IsingModel/Images/expanded-state-subcritical.png>]
-<../IsingModel/Images/expanded-state-supercritical.png, id=191, 867.24pt x 361.35pt>
+<../IsingModel/Images/expanded-state-supercritical.png, id=196, 867.24pt x 361.35pt>
 File: ../IsingModel/Images/expanded-state-supercritical.png Graphic file (type png)
 <use ../IsingModel/Images/expanded-state-supercritical.png>
 Package pdftex.def Info: ../IsingModel/Images/expanded-state-supercritical.png  used on input line 305.
@@ -458,12 +458,12 @@ l.322
                                                   \__shipout_drop_firstpage_...
 l.322 
        <../IsingModel/Images/expanded-state-critical.png> <../IsingModel/Images/expanded-state-supercritical.png>]
-<../MolecularChain2/Images/avgE-vs-T.png, id=201, 867.24pt x 650.43pt>
+<../MolecularChain2/Images/avgE-vs-T.png, id=206, 867.24pt x 650.43pt>
 File: ../MolecularChain2/Images/avgE-vs-T.png Graphic file (type png)
 <use ../MolecularChain2/Images/avgE-vs-T.png>
 Package pdftex.def Info: ../MolecularChain2/Images/avgE-vs-T.png  used on input line 325.
 (pdftex.def)             Requested size: 432.48051pt x 324.36067pt.
-<../MolecularChain2/Images/rand-init-T-spread.png, id=203, 867.24pt x 361.35pt>
+<../MolecularChain2/Images/rand-init-T-spread.png, id=208, 867.24pt x 361.35pt>
 File: ../MolecularChain2/Images/rand-init-T-spread.png Graphic file (type png)
 <use ../MolecularChain2/Images/rand-init-T-spread.png>
 Package pdftex.def Info: ../MolecularChain2/Images/rand-init-T-spread.png  used on input line 338.
@@ -477,32 +477,70 @@ l.345
                                                   \__shipout_drop_firstpage_...
 l.345 
        <../MolecularChain2/Images/avgE-vs-T.png> <../MolecularChain2/Images/rand-init-T-spread.png>]
-<../MolecularChain2/Images/T-aR-gridscan.png, id=212, 867.24pt x 361.35pt>
+<../MolecularChain2/Images/T-aR-gridscan.png, id=217, 867.24pt x 361.35pt>
 File: ../MolecularChain2/Images/T-aR-gridscan.png Graphic file (type png)
 <use ../MolecularChain2/Images/T-aR-gridscan.png>
 Package pdftex.def Info: ../MolecularChain2/Images/T-aR-gridscan.png  used on input line 348.
 (pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
- (./mod108.bbl) [9pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
+<../IsingModel/Images/avgE-avgS-vs-T-v2.png, id=219, 867.24pt x 650.43pt>
+File: ../IsingModel/Images/avgE-avgS-vs-T-v2.png Graphic file (type png)
+<use ../IsingModel/Images/avgE-avgS-vs-T-v2.png>
+Package pdftex.def Info: ../IsingModel/Images/avgE-avgS-vs-T-v2.png  used on input line 366.
+(pdftex.def)             Requested size: 432.48051pt x 324.36067pt.
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.365 \end{document}
-                     <../MolecularChain2/Images/T-aR-gridscan.png>] (./mod108.aux)
+l.370 
+       <../MolecularChain2/Images/T-aR-gridscan.png>]
+<../IsingModel/Images/steps-vs-T.png, id=228, 867.24pt x 361.35pt>
+File: ../IsingModel/Images/steps-vs-T.png Graphic file (type png)
+<use ../IsingModel/Images/steps-vs-T.png>
+Package pdftex.def Info: ../IsingModel/Images/steps-vs-T.png  used on input line 376.
+(pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
+<../IsingModel/Images/avgE-avgS-vs-T-expanded.png, id=230, 867.24pt x 650.43pt>
+File: ../IsingModel/Images/avgE-avgS-vs-T-expanded.png Graphic file (type png)
+<use ../IsingModel/Images/avgE-avgS-vs-T-expanded.png>
+Package pdftex.def Info: ../IsingModel/Images/avgE-avgS-vs-T-expanded.png  used on input line 388.
+(pdftex.def)             Requested size: 432.48051pt x 324.36067pt.
+ [10pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.392 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.392 
+       <../IsingModel/Images/avgE-avgS-vs-T-v2.png> <../IsingModel/Images/steps-vs-T.png>]
+<../IsingModel/Images/H-analysis.png, id=240, 867.24pt x 361.35pt>
+File: ../IsingModel/Images/H-analysis.png Graphic file (type png)
+<use ../IsingModel/Images/H-analysis.png>
+Package pdftex.def Info: ../IsingModel/Images/H-analysis.png  used on input line 402.
+(pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
+ (./mod108.bbl [11pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.11 \end{thebibliography}
+                          pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.11 \end{thebibliography}
+                           <../IsingModel/Images/avgE-avgS-vs-T-expanded.png> <../IsingModel/Images/H-analysis.png>]) [12] (./mod108.aux)
 Package rerunfilecheck Info: File `mod108.out' has not changed.
-(rerunfilecheck)             Checksum: 1DBA0ABA6D3659E0ED4E1488CC2BF35F;1221.
+(rerunfilecheck)             Checksum: 8C618215E0CFFD4FC95B62DFA7360403;1337.
  ) 
 Here is how much of TeX's memory you used:
- 11576 strings out of 480247
- 177170 string characters out of 5896151
- 832500 words of memory out of 5000000
- 29309 multiletter control sequences out of 15000+600000
+ 11617 strings out of 480247
+ 178515 string characters out of 5896151
+ 833001 words of memory out of 5000000
+ 29338 multiletter control sequences out of 15000+600000
  472663 words of font info for 40 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,6n,63p,314b,2084s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,6n,63p,337b,2084s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on mod108.pdf (10 pages, 7653168 bytes).
+Output written on mod108.pdf (13 pages, 10771874 bytes).
 PDF statistics:
- 301 PDF objects out of 1000 (max. 8388607)
- 228 compressed objects within 3 object streams
- 73 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 336 PDF objects out of 1000 (max. 8388607)
+ 252 compressed objects within 3 object streams
+ 81 named destinations out of 1000 (max. 500000)
+ 174 words of extra memory for PDF output out of 10000 (max. 10000000)
 
