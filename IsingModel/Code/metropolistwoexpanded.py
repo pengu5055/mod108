@@ -2,8 +2,7 @@
 Rewrite of the Metroplis algorithm for a 2D Ising model.
 """
 import numpy as np
-import matplotlib.pyplot as plt
-from typing import Iterable
+
 
 class Metropolis2:
     def __init__(self,
@@ -28,11 +27,12 @@ class Metropolis2:
         self.temperatures = [temperature]
         # self.state_bounds = (state_bounds[0], state_bounds[1] + 1)
 
-        self.state = np.random.choice([-1, 1], (self.x_dim, self.y_dim))
+        self.state = self._randomize_state()
         self.init_state = np.copy(self.state)
 
     def _randomize_state(self) -> None:
-        self.state = np.random.choice([-1, 1], (self.x_dim, self.y_dim))
+        self.state = np.random.choice(range(self.state_bounds[0], self.state_bounds[1] + 1), (self.x_dim, self.y_dim))
+        return self.state
 
     def _energy(self) -> float:
         energy = 0
@@ -65,11 +65,11 @@ class Metropolis2:
             delta_energy = self._delta_energy(i, j, self.energies[-1])
             
             if delta_energy <= 0:
-                self.state[i, j] += np.random.choice([-1, 1]) % self.state_bounds[1]
+                self.state[i, j] = (self.state[i, j] % (1 + self.state_bounds[1])) * np.random.choice([-1, 1])
                 self.temperature *= self.ANNEAL_RATE
             else:
                 if np.random.rand() < np.exp(-delta_energy / (self.temperature * self.kB)):
-                    self.state[i, j] += np.random.choice([-1, 1]) % self.state_bounds[1]
+                    self.state[i, j] = (self.state[i, j] % (1 + self.state_bounds[1])) * np.random.choice([-1, 1])
 
             self.energies.append(self.energies[-1] - delta_energy)
             if iter > self.STOP_STEPS:
@@ -81,7 +81,7 @@ class Metropolis2:
             
             if iter > self.MAX_ITER:
                 break
-
+            
             self.temperatures.append(self.temperature)
             iter += 1
         
