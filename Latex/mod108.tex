@@ -13,6 +13,33 @@
 % Load the natbib package for citation style
 \usepackage{natbib}
 
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{codeblock}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=codeblock}
 
 \newcommand{\bb}[1]{\bm#1}
 \newcommand{\dd}{\mathrm{d}}
@@ -155,6 +182,19 @@ with minimal adaptations. The advantage of a class-based approach is that I can 
 of the class with different parameters. Since I wanted to get decent statistics for the molecular chain I had quite strict exit conditions and also 
 many repeat runs for each temperature. This produced quite a massive amount of data which I conveniently stored in a \texttt{HDF5} file. I $\heartsuit$
 \texttt{HDF5}.
+
+\subsection{Ising Model}
+After (re)writing the code for the molecular chain I adapted it for the Ising model, creating a solver class \texttt{Metropolis2}. I had a few problems
+with the scale of energy and temperature but I think I managed to solve those in the end and the results seem to be reasonable. Data was also stored in 
+a \texttt{HDF5} file, due to the sheer volume as I wanted a decent sample size for my statistics. The main challenge was the code being relatively slow 
+per lattice and I wanted to simulate long times. As much as I promised not to focus on optimization I did to single-computer parallelization by utilizing
+the \texttt{ProcessPoolExecutor} from the \texttt{concurrent.futures} module of Python. As stated above, a class-based approach allowed me to easily
+spawn multiple instances of the solver class with different parameters on different processes which greatly sped up the gathering of data. I think this 
+style of parallelization is reasonable as it takes very little time to implement and yields significant speedups. Here is 
+a brief overview of how \texttt{ProcessPoolExecutor} is used:
+
+\lstinputlisting[language=Python]{code-demo.txt}
+
 \section{Results}
 \section{Conclusion and Comments}
 

@@ -1,8 +1,9 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}Task at Hand}{1}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Molecular Chain}{1}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Ising Model}{1}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Ising Model}{2}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Solution Overview}{2}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Molecular Chain}{2}{subsection.3.1}%
-\contentsline {section}{\numberline {4}Results}{2}{section.4}%
-\contentsline {section}{\numberline {5}Conclusion and Comments}{2}{section.5}%
+\contentsline {subsection}{\numberline {3.2}Ising Model}{2}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Results}{3}{section.4}%
+\contentsline {section}{\numberline {5}Conclusion and Comments}{3}{section.5}%

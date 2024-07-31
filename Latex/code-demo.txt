@@ -1,0 +1,31 @@
+import ...
+
+class Worker:
+    def __init__(self,
+                 temperature: float,
+                 run: int,
+                 ):
+        self.T = temperature
+        self.run = run
+    
+    def process(self):
+        dim = (50, 50)
+        m = Metropolis2(dim, self.T)
+        # Set parameters for the simulation
+        s_init, s_final, en = m.run()
+
+        return self.run, s_init, s_final, en, m.temperatures
+    
+# Create function that'll get the workders to work
+def worker_task(params):
+    worker = Worker(*params)
+    return worker.process()
+
+# Run process pool and save on thread execution
+with concurrent.futures.ProcessPoolExecutor(max_workers=16) as executor:
+    futures = [executor.submit(worker_task, params) for params in param_list]
+    
+    # Step 4: Collect the results
+    for future in concurrent.futures.as_completed(futures):
+        run, s_init, s_final, en, temps = future.result()
+        # Save data etc.
