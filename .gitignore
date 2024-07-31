@@ -6,3 +6,5 @@ MolecularChain2/Results/avgE-vs-T.h5
 IsingModel/Results/avgE-vs-T-pool.h5
 IsingModel/Results/avgE-vs-T-v2.h5
 IsingModel/Results/avgE-vs-T-fixedscale.h5
+IsingModel/Results/H-analysis.h5
+IsingModel/Results/avgE-vs-T-expandedstate.h5
