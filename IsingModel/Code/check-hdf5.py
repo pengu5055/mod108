@@ -7,7 +7,7 @@ import h5py
 
 # Calculate Observables: Eigenmagnetization
 def magnetization(state: np.ndarray):
-    S = np.array([[np.sum(np.array(final[run])) for run in range(1)] for final in state]) 
+    S = np.array([np.sum(np.array(final)) for final in state]) 
     return S
 
 
@@ -26,6 +26,8 @@ with h5py.File(save_path, "r") as f:
     
 S = np.array(S)
 energies = np.array(energies)
+print(S.shape)
+print(energies.shape)
 np.save("./IsingModel/Results/S-v2.npy", S)
 np.save("./IsingModel/Results/E-v2.npy", energies)
         
