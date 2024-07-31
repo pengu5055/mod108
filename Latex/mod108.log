@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.16)  1 AUG 2024 00:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.16)  1 AUG 2024 01:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -449,98 +449,136 @@ File: ../IsingModel/Images/expanded-state-supercritical.png Graphic file (type p
 <use ../IsingModel/Images/expanded-state-supercritical.png>
 Package pdftex.def Info: ../IsingModel/Images/expanded-state-supercritical.png  used on input line 305.
 (pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
+<../IsingModel/Images/expanded-plus-state-subcritical.png, id=199, 867.24pt x 361.35pt>
+File: ../IsingModel/Images/expanded-plus-state-subcritical.png Graphic file (type png)
+<use ../IsingModel/Images/expanded-plus-state-subcritical.png>
+Package pdftex.def Info: ../IsingModel/Images/expanded-plus-state-subcritical.png  used on input line 316.
+(pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
  [7pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.322 
+l.320 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.322 
+l.320 
        <../IsingModel/Images/expanded-state-critical.png> <../IsingModel/Images/expanded-state-supercritical.png>]
-<../MolecularChain2/Images/avgE-vs-T.png, id=206, 867.24pt x 650.43pt>
-File: ../MolecularChain2/Images/avgE-vs-T.png Graphic file (type png)
-<use ../MolecularChain2/Images/avgE-vs-T.png>
-Package pdftex.def Info: ../MolecularChain2/Images/avgE-vs-T.png  used on input line 325.
-(pdftex.def)             Requested size: 432.48051pt x 324.36067pt.
-<../MolecularChain2/Images/rand-init-T-spread.png, id=208, 867.24pt x 361.35pt>
-File: ../MolecularChain2/Images/rand-init-T-spread.png Graphic file (type png)
-<use ../MolecularChain2/Images/rand-init-T-spread.png>
-Package pdftex.def Info: ../MolecularChain2/Images/rand-init-T-spread.png  used on input line 338.
+<../IsingModel/Images/expanded-xlong-state-critical.png, id=210, 867.24pt x 361.35pt>
+File: ../IsingModel/Images/expanded-xlong-state-critical.png Graphic file (type png)
+<use ../IsingModel/Images/expanded-xlong-state-critical.png>
+Package pdftex.def Info: ../IsingModel/Images/expanded-xlong-state-critical.png  used on input line 330.
+(pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
+<../IsingModel/Images/ising-anti-critical.png, id=212, 867.24pt x 361.35pt>
+File: ../IsingModel/Images/ising-anti-critical.png Graphic file (type png)
+<use ../IsingModel/Images/ising-anti-critical.png>
+Package pdftex.def Info: ../IsingModel/Images/ising-anti-critical.png  used on input line 340.
 (pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
  [8pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.345 
+l.344 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.345 
-       <../MolecularChain2/Images/avgE-vs-T.png> <../MolecularChain2/Images/rand-init-T-spread.png>]
-<../MolecularChain2/Images/T-aR-gridscan.png, id=217, 867.24pt x 361.35pt>
+l.344 
+       <../IsingModel/Images/expanded-plus-state-subcritical.png> <../IsingModel/Images/expanded-xlong-state-critical.png>]
+<../IsingModel/Images/ising-anti-zoom-critical.png, id=222, 867.24pt x 361.35pt>
+File: ../IsingModel/Images/ising-anti-zoom-critical.png Graphic file (type png)
+<use ../IsingModel/Images/ising-anti-zoom-critical.png>
+Package pdftex.def Info: ../IsingModel/Images/ising-anti-zoom-critical.png  used on input line 350.
+(pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
+<../MolecularChain2/Images/avgE-vs-T.png, id=224, 867.24pt x 650.43pt>
+File: ../MolecularChain2/Images/avgE-vs-T.png Graphic file (type png)
+<use ../MolecularChain2/Images/avgE-vs-T.png>
+Package pdftex.def Info: ../MolecularChain2/Images/avgE-vs-T.png  used on input line 371.
+(pdftex.def)             Requested size: 432.48051pt x 324.36067pt.
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.375 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.375 
+       <../IsingModel/Images/ising-anti-zoom-critical.png> <../IsingModel/Images/ising-anti-critical.png>]
+<../MolecularChain2/Images/rand-init-T-spread.png, id=234, 867.24pt x 361.35pt>
+File: ../MolecularChain2/Images/rand-init-T-spread.png Graphic file (type png)
+<use ../MolecularChain2/Images/rand-init-T-spread.png>
+Package pdftex.def Info: ../MolecularChain2/Images/rand-init-T-spread.png  used on input line 384.
+(pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
+<../MolecularChain2/Images/T-aR-gridscan.png, id=236, 867.24pt x 361.35pt>
 File: ../MolecularChain2/Images/T-aR-gridscan.png Graphic file (type png)
 <use ../MolecularChain2/Images/T-aR-gridscan.png>
-Package pdftex.def Info: ../MolecularChain2/Images/T-aR-gridscan.png  used on input line 348.
+Package pdftex.def Info: ../MolecularChain2/Images/T-aR-gridscan.png  used on input line 394.
 (pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
-<../IsingModel/Images/avgE-avgS-vs-T-v2.png, id=219, 867.24pt x 650.43pt>
+ [10pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.398 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.398 
+       <../MolecularChain2/Images/avgE-vs-T.png> <../MolecularChain2/Images/rand-init-T-spread.png>]
+<../IsingModel/Images/avgE-avgS-vs-T-v2.png, id=246, 867.24pt x 650.43pt>
 File: ../IsingModel/Images/avgE-avgS-vs-T-v2.png Graphic file (type png)
 <use ../IsingModel/Images/avgE-avgS-vs-T-v2.png>
-Package pdftex.def Info: ../IsingModel/Images/avgE-avgS-vs-T-v2.png  used on input line 366.
+Package pdftex.def Info: ../IsingModel/Images/avgE-avgS-vs-T-v2.png  used on input line 412.
 (pdftex.def)             Requested size: 432.48051pt x 324.36067pt.
- [9pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
+ [11pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.370 
-       <../MolecularChain2/Images/T-aR-gridscan.png>]
-<../IsingModel/Images/steps-vs-T.png, id=228, 867.24pt x 361.35pt>
+l.419 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.419 
+       <../MolecularChain2/Images/T-aR-gridscan.png> <../IsingModel/Images/avgE-avgS-vs-T-v2.png>]
+<../IsingModel/Images/steps-vs-T.png, id=255, 867.24pt x 361.35pt>
 File: ../IsingModel/Images/steps-vs-T.png Graphic file (type png)
 <use ../IsingModel/Images/steps-vs-T.png>
-Package pdftex.def Info: ../IsingModel/Images/steps-vs-T.png  used on input line 376.
+Package pdftex.def Info: ../IsingModel/Images/steps-vs-T.png  used on input line 422.
 (pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
-<../IsingModel/Images/avgE-avgS-vs-T-expanded.png, id=230, 867.24pt x 650.43pt>
+<../IsingModel/Images/avgE-avgS-vs-T-expanded.png, id=257, 867.24pt x 650.43pt>
 File: ../IsingModel/Images/avgE-avgS-vs-T-expanded.png Graphic file (type png)
 <use ../IsingModel/Images/avgE-avgS-vs-T-expanded.png>
-Package pdftex.def Info: ../IsingModel/Images/avgE-avgS-vs-T-expanded.png  used on input line 388.
+Package pdftex.def Info: ../IsingModel/Images/avgE-avgS-vs-T-expanded.png  used on input line 434.
 (pdftex.def)             Requested size: 432.48051pt x 324.36067pt.
- [10pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) has been already used, duplicate ignored
+ [12pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.392 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) has been already used, duplicate ignored
+l.445 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.392 
-       <../IsingModel/Images/avgE-avgS-vs-T-v2.png> <../IsingModel/Images/steps-vs-T.png>]
-<../IsingModel/Images/H-analysis.png, id=240, 867.24pt x 361.35pt>
+l.445 
+       <../IsingModel/Images/steps-vs-T.png> <../IsingModel/Images/avgE-avgS-vs-T-expanded.png>]
+<../IsingModel/Images/H-analysis.png, id=268, 867.24pt x 361.35pt>
 File: ../IsingModel/Images/H-analysis.png Graphic file (type png)
 <use ../IsingModel/Images/H-analysis.png>
-Package pdftex.def Info: ../IsingModel/Images/H-analysis.png  used on input line 402.
+Package pdftex.def Info: ../IsingModel/Images/H-analysis.png  used on input line 448.
 (pdftex.def)             Requested size: 432.48051pt x 180.20036pt.
- (./mod108.bbl [11pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) has been already used, duplicate ignored
+ [13pdfTeX warning (ext4): destination with the same identifier (name{figure.20}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.11 \end{thebibliography}
-                          pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.11 \end{thebibliography}
-                           <../IsingModel/Images/avgE-avgS-vs-T-expanded.png> <../IsingModel/Images/H-analysis.png>]) [12] (./mod108.aux)
+l.464 \newpage
+               <../IsingModel/Images/H-analysis.png>] (./mod108.bbl) [14] (./mod108.aux)
 Package rerunfilecheck Info: File `mod108.out' has not changed.
 (rerunfilecheck)             Checksum: 8C618215E0CFFD4FC95B62DFA7360403;1337.
  ) 
 Here is how much of TeX's memory you used:
- 11617 strings out of 480247
- 178515 string characters out of 5896151
- 833001 words of memory out of 5000000
- 29338 multiletter control sequences out of 15000+600000
+ 11659 strings out of 480247
+ 180208 string characters out of 5896151
+ 833583 words of memory out of 5000000
+ 29369 multiletter control sequences out of 15000+600000
  472663 words of font info for 40 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,6n,63p,337b,2084s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on mod108.pdf (13 pages, 10771874 bytes).
+Output written on mod108.pdf (15 pages, 12613028 bytes).
 PDF statistics:
- 336 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 81 named destinations out of 1000 (max. 500000)
- 174 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 363 PDF objects out of 1000 (max. 8388607)
+ 269 compressed objects within 3 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 194 words of extra memory for PDF output out of 10000 (max. 10000000)
 

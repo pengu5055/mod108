@@ -307,6 +307,52 @@ Although it does appear somewhat more structured.
     \label{fig:ising-demo-3/2-supercrit}
 \end{figure}
 
+Since I already had the code at hand I also further expanded the state space to include the range $-4$ to $4$ which would by my previous 
+logic be $s=7/2$ particles for which I found some interesting papers \cite{nano13131995}. The results are displayed in
+Figure (\ref{fig:ising-demo-4/2-subcrit}) for a subcritical temperature of $T=1$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textwidth]{../IsingModel/Images/expanded-plus-state-subcritical.png}
+    \caption{Initial and final states of the Ising model lattice with $s=7/2$ particles at a subcritical temperature of $T=1$.}
+    \label{fig:ising-demo-4/2-subcrit}
+\end{figure}
+
+The lattice looks very similar to the $s=3/2$ lattice however with even more variation. So much so that the fine detail is hardly discernable.
+I also ran the simulation at the critical temperature of $T\approx 2.27$ which is displayed in Figure (\ref{fig:ising-demo-4/2-critical}). I left 
+this simulation to run for very long $10^8$ steps at a reduced size of $100\times 100$ to see what happens when the lattice is allowed to really 
+relax. The smaller lattice also helps see the fine detail. The result is a nice pattern of what I'm guessing could be called magnetic domains. I find 
+it fascinating that the domains are almost entirely made of $4$ and $-4$ states. As a matter of fact there are little other states present besides 
+a scatter of states $0$. This \textit{extremization} to the edge states is exactly why I let the simulation run for so long.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textwidth]{../IsingModel/Images/expanded-xlong-state-critical.png}
+    \caption{Initial and final states of the Ising model lattice with $s=7/2$ particles at the critical temperature of $T\approx 2.27$.}
+    \label{fig:ising-demo-4/2-critical}
+\end{figure}
+
+And of course how could one forget the anti-ferromagnetic phase (where we set $J=-1$) which is displayed in Figure (\ref{fig:ising-demo-anti}).
+The lattice is in a checkerboard pattern which is exactly what we expect.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textwidth]{../IsingModel/Images/ising-anti-critical.png}
+    \caption{Initial and final states of the Ising model lattice in the anti-ferromagnetic phase at a critical temperature of $T\approx 2.27$.}
+    \label{fig:ising-demo-anti}
+\end{figure}
+
+This image is nice to see the omni-presence of the checkerboard pattern however I plotted a smaller lattice of $100\times 100$ spins 
+to make the pattern more visible. This can be seen in Figure (\ref{fig:ising-demo-anti-small}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.95\textwidth]{../IsingModel/Images/ising-anti-zoom-critical.png}
+    \caption{Initial and final states of the Ising model lattice in the anti-ferromagnetic phase at a critical temperature of $T\approx 2.27$.}
+    \label{fig:ising-demo-anti-small}
+\end{figure}
+
+
 The rest of the relevant plots for the Ising model are displayed in the results section.
 
 \section{Results}
@@ -406,9 +452,16 @@ intuitive.
 
 
 \section{Conclusion and Comments}
+Man this report took way longer to write than I expected. I've just read online that my attempt at a generalized Ising model is close to what is known 
+as the \textbf{Potts} model, however I kept the Ising model's simple Hamiltonian which still lead to some interesting results. If I had more time I would 
+definitely explore this topic further as I find it quite fascinating. Especially the fact that nature really does tend to order itself into neat patterns. Or maybe 
+we think they're neat because they are a part of nature. The way I wanted to explore many posibilites of the models really made me generate 
+quite a lot of data so I now have some disk cleaning to do. I hope this report is a bit more in the spirit of the subject and less about the technical approach, although I did include that 
+short segment on thread pools. I'm quite happy with the results I got and I think I managed to explore the models quite well. 
+
 
 % Add references
-% \newpage
+\newpage
 \bibliographystyle{unsrt}
 \bibliography{mod108}
 
