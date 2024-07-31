@@ -235,10 +235,11 @@ a brief overview of how \texttt{ProcessPoolExecutor} is used:
 
 \lstinputlisting[language=Python]{code-demo.txt}
 
-Anyways, let's get to some images. Like before some debug style plots at the beginning definitely do not hurt. I wanted to get a feel for where the 
-critical temperature is and how long it takes to reach equilibrium. For the purpose of nicer images I ran the simulation for a $500\times 500$ lattice, 
-as the professor commented that this size would give nice-looking results. Figure (\ref{fig:ising-demo-subcritical}) shows the initial and 
-final states of the lattice at a subcritical temperature of $T=1$.
+I have to mention somewhere that I accidentally kept Simulated Annealing on for some of the temperature dependance studies, which meant 
+I had to recalculate a lot of data. Anyways, let's get to some images. Like before some debug style plots at the beginning definitely do not 
+hurt. I wanted to get a feel for where the critical temperature is and how long it takes to reach equilibrium. For the purpose of 
+nicer images I ran the simulation for a $500\times 500$ lattice, as the professor commented that this size would give nice-looking 
+results. Figure (\ref{fig:ising-demo-subcritical}) shows the initial and final states of the lattice at a subcritical temperature of $T=1$.
 
 \begin{figure}[H]
     \centering
@@ -272,21 +273,72 @@ $T_c\approx 2.269185$. The result is displayed in Figure (\ref{fig:ising-demo-cr
 The lattice is sort of a mix between the subcritical and supercritical states, which is exactly what we expect. Visually it looks like a grainyer
 version of the ferromagnetic state. As a final little debug plot I wanted to see what a state would look like if I allowed more than just 
 $|\ua\ra$ and $|\da\ra$ states. As an attempt at a generalization to $s=3/2$ particles I allowed for states to go from $-2$ to $2$. The result of 
-optimizing such a lattice with the same Hamiltonian is displayed in Figure (\ref{fig:ising-demo-3/2}).
+optimizing such a lattice with the same Hamiltonian at a subcritical temperature is displayed in Figure (\ref{fig:ising-demo-3/2-subcrit}).
 
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=.95\textwidth]{../IsingModel/Images/ising-demo-3-2.png}
-    \caption{Initial and final states of the Ising model lattice with $s=3/2$ particles.}
-    \label{fig:ising-demo-3/2}
+    \includegraphics[width=.95\textwidth]{../IsingModel/Images/expanded-state-subcritical.png}
+    \caption{Initial and final states of the Ising model lattice with $s=3/2$ particles at a subcritical temperature of $T=1$.}
+    \label{fig:ising-demo-3/2-subcrit}
 \end{figure}
 
+The lattice looks very similar to the $s=1/2$ lattice however with more variation. I find it interesting that patches of states $2$ and $-2$ 
+surround themselves with states $1$ and $-1$. I have no idea if this model has any real life applications however. I wish I had enough time to 
+explore this further. Analogous to $s=1/2$ particles we can expect interesting behavior at the critical temperature. The result is displayed in
+Figure (\ref{fig:ising-demo-3/2-critical}).
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textwidth]{../IsingModel/Images/expanded-state-critical.png}
+    \caption{Initial and final states of the Ising model lattice with $s=3/2$ particles at the critical temperature of $T\approx 2.27$.}
+    \label{fig:ising-demo-3/2-critical}
+\end{figure}
 
+I'm not going to lie, the results look very simmilar to the subcritical temperature lattice with $s=3/2$ particles. Maybe even less \textit{dusty}
+which is odd because I would expect the opposite. Due to a lack of time I did not have the liberty of exploring this further by, for example, gathering
+more data and doing a statistical analysis instead of eesentialy an empirical one. For completeness I also ran the simulation at a supercritical
+temperature of $T=10$ which is displayed in Figure (\ref{fig:ising-demo-3/2-supercrit}) where we get exactly what we expect, random noise more or less.
+Although it does appear somewhat more structured.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textwidth]{../IsingModel/Images/expanded-state-supercritical.png}
+    \caption{Initial and final states of the Ising model lattice with $s=3/2$ particles at a supercritical temperature of $T=10$.}
+    \label{fig:ising-demo-3/2-supercrit}
+\end{figure}
+
+The rest of the relevant plots for the Ising model are displayed in the results section.
 
 \section{Results}
 \subsection{Molecular Chain}
+The instructions of the task demanded that we explore the temperature dependance of the equilibrium energy, which is presented in Figure 
+(\ref{fig:molecular-energy}). For better statistics due to the stochastic nature of the Metropolis-Hastings algorithm I ran the simulation
+$100$ times for each temperature. This resulted in $10000$ data sets of multiple thousand points each, hence the need for \texttt{HDF5} storage.
+As we can see from the image the equilibrium energy of the molecular chain decreases with temperature as is expected. The standard deviation 
+of the energy also somewhat decreases with temperature, which is likewise to be expected. I thought it would be interesting to also see how many 
+steps of the Metropolis algorithm were needed to reach my convergence criteria which was an $\varepsilon$ tolerance of $10^{-14}$ averaged out 
+over the last $50$ steps. Below are also spreads of the final temperature and energy across the runs. I thought it was a neat alternative way 
+to visually display the scatter of the data for each temperature.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textwidth]{../MolecularChain2/Images/avgE-vs-T.png}
+    \caption{Equilibrium energy of the molecular chain as a function of temperature.}
+    \label{fig:molecular-energy}
+\end{figure}
+
+Since I had the data already gathered it was very simple to plot the average shape of the molecular chain across all temperatures. I also tried to 
+display the average shapes over repeat runs for each temperature. The results are displayed in Figure (\ref{fig:molecular-chain-shapes}). It is 
+interesting to note albeit expected that the shape optimizes best at medium to low temperatures. At high temperatures the chain can 
+still jump around a lot and at low temperatures it can get stuck in local minima. Overall though we get quite a well defined shape that is close 
+to the optimal. I find it insteresting that the left portion of the chain is always well defined while the right position has some uncertainty.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textwidth]{../MolecularChain2/Images/rand-init-T-spread.png}
+    \caption{Average shape of the molecular chain across all temperatures and average shapes over repeat runs for each temperature.}
+    \label{fig:molecular-chain-shapes}
+\end{figure}
 
 
 \section{Conclusion and Comments}

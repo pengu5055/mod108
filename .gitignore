@@ -8,3 +8,5 @@ IsingModel/Results/avgE-vs-T-v2.h5
 IsingModel/Results/avgE-vs-T-fixedscale.h5
 IsingModel/Results/H-analysis.h5
 IsingModel/Results/avgE-vs-T-expandedstate.h5
+# You know what..
+*.h5

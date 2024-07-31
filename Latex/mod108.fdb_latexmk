@@ -1,21 +1,26 @@
 # Fdb version 3
-["bibtex mod108"] 1722446873 "mod108.aux" "mod108.bbl" "mod108" 1722446882
+["bibtex mod108"] 1722458194 "mod108.aux" "mod108.bbl" "mod108" 1722458264
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "mod108.aux" 1722446882 4860 e8d794f030fac663f82b4769ecfcf4b5 "pdflatex"
+  "mod108.aux" 1722458264 6484 5c2539bd1839c5130524c1dfc87ad3a7 "pdflatex"
   "mod108.bib" 1721863929 280 1083cc94409ae67f7742ae8149dc5435 ""
   (generated)
   "mod108.bbl"
   "mod108.blg"
-["pdflatex"] 1722446873 "/home/pengu5055/Documents/FMF1mag/mod108/Latex/mod108.tex" "mod108.pdf" "mod108" 1722446882
+["pdflatex"] 1722458249 "/home/pengu5055/Documents/FMF1mag/mod108/Latex/mod108.tex" "mod108.pdf" "mod108" 1722458264
+  "../IsingModel/Images/expanded-state-critical.png" 1722456229 1023422 cb74e15a72859f43cc3350bd112a9065 ""
+  "../IsingModel/Images/expanded-state-subcritical.png" 1722457157 1101400 f4052f8f5d1b7a13f246434dc2736774 ""
+  "../IsingModel/Images/expanded-state-supercritical.png" 1722457721 1213766 f2ab986b267a1525ccef807bb61c68ab ""
   "../IsingModel/Images/ising-demo-critical.png" 1722446555 354659 6fe0d9fda19a9f21ac52aac0822c3172 ""
   "../IsingModel/Images/ising-demo-subcritical.png" 1722443525 291944 d8e5da43a695a8a548748a2c642c3f94 ""
   "../IsingModel/Images/ising-demo-supercritical.png" 1722446267 403934 5115b1e22787f7fcb5b05cbc54ea53ae ""
+  "../MolecularChain2/Images/avgE-vs-T.png" 1721998165 1116591 278f3c4e56552f374692c3da12904541 ""
+  "../MolecularChain2/Images/rand-init-T-spread.png" 1722116446 1262213 4022437cfa90e04b1beae7c2b758b6c0 ""
   "../accidental-veriznica.png" 1722112815 407625 9320256e0cf012df69cc71017b528668 ""
   "../curly-boi-Beta10.png" 1722113297 96954 351e9b8b00fe5aa92271ed8b23b0249a ""
   "../fixed-init-multiple.png" 1721905605 495754 3b196c26752daabbd89e6783641cb166 ""
   "/etc/texmf/web2c/texmf.cnf" 1721132218 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/pengu5055/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1721133484 1405652 6dbe6b4a0b8b03aa67147fe2fddcad95 ""
-  "/home/pengu5055/Documents/FMF1mag/mod108/Latex/mod108.tex" 1722446861 14965 f25ee5ef95d6896462b1720b81faf1de ""
+  "/home/pengu5055/Documents/FMF1mag/mod108/Latex/mod108.tex" 1722458249 19411 21ce858b8c1c7efc610466693048709a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -99,11 +104,11 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1721229899 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "code-demo.txt" 1722438054 937 b92eba309c8ebb37e02a77b61ac689fa ""
   "logo_fmf.pdf" 1721863929 15612 f362f770ef36c22b3204cc12be10dccd ""
-  "mod108.aux" 1722446882 4860 e8d794f030fac663f82b4769ecfcf4b5 "pdflatex"
-  "mod108.bbl" 1722446873 290 fa4b7007bfae80c4af14b74da5c31be0 "bibtex mod108"
-  "mod108.out" 1722446882 1221 1dba0aba6d3659e0ed4e1488cc2bf35f "pdflatex"
-  "mod108.tex" 1722446861 14965 f25ee5ef95d6896462b1720b81faf1de ""
-  "mod108.toc" 1722446882 748 b91e0b97f88e059ff967473930b0242d "pdflatex"
+  "mod108.aux" 1722458264 6484 5c2539bd1839c5130524c1dfc87ad3a7 "pdflatex"
+  "mod108.bbl" 1722458194 290 fa4b7007bfae80c4af14b74da5c31be0 "bibtex mod108"
+  "mod108.out" 1722458264 1221 1dba0aba6d3659e0ed4e1488cc2bf35f "pdflatex"
+  "mod108.tex" 1722458249 19411 21ce858b8c1c7efc610466693048709a ""
+  "mod108.toc" 1722458264 748 1ba98aaed75dada31b09b73f693637d5 "pdflatex"
   (generated)
   "mod108.aux"
   "mod108.log"

@@ -3,7 +3,7 @@ Run a comprehensive analysis of the effects of an external magnetic field on the
 """
 import numpy as np
 import concurrent.futures
-from metropolistwo import Metropolis2
+from metropolistwostatesave import Metropolis2
 import h5py
 import multiprocessing
 
@@ -22,11 +22,12 @@ class Worker:
         m.H = self.H
         m.MAX_ITER = 1e5
         m.quiet = True
+        m.ANNEAL_RATE = 1
 
         print(f"[INFO] Starting: H={self.H}\tRun={self.run}")
-        s_init, s_final, en = m.run()
+        states, en = m.run()
 
-        return self.H, self.run, s_init, s_final, en, m.temperatures
+        return self.H, self.run, states, en, m.temperatures
     
 # Create function that'll get the workders to work
 def worker_task(params):
@@ -34,11 +35,11 @@ def worker_task(params):
     return worker.process()
 
 # Create function for thread-safe writing
-def write_data(save_path, key, s_final, en, temps, lock):
+def write_data(save_path, key, states, en, temps, lock):
     with lock:
         with h5py.File(save_path, "a") as f:
             group = f.create_group(f"{key}")
-            dset_state = group.create_dataset(f"state-{key}", data=s_final,
+            dset_state = group.create_dataset(f"state-{key}", data=states,
                                             compression="gzip", compression_opts=9)
             dset_en = group.create_dataset(f"energy-{key}", data=en, compression="gzip",
                                         compression_opts=9)
@@ -60,10 +61,10 @@ with concurrent.futures.ProcessPoolExecutor(max_workers=16) as executor:
     
     # Step 4: Collect the results
     for future in concurrent.futures.as_completed(futures):
-        H, run, s_init, s_final, en, temps = future.result()
+        H, run, states, en, temps = future.result()
         arg1 = H
         arg2 = run
-        save_path = "./IsingModel/Results/H-analysis.h5"
+        save_path = "./IsingModel/Results/H-analysis-noanneal.h5"
         print(f"Storing run {arg1},{arg2} to '{save_path}'..")
-        write_data(save_path, f"{arg1}-{arg2}", s_final, en, temps, lock)
+        write_data(save_path, f"{arg1}-{arg2}", states, en, temps, lock)
         print(f"Saved!")
