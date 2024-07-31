@@ -55,15 +55,3 @@ def magnetization(state: np.ndarray):
 S = np.abs(magnetization(end_states))
 avgS = np.mean(S, axis=1)
 sigmaS = np.std(S, axis=1)
-
-# Calculate observables: Spin susceptibility and Heat capacity from truncated data
-def susceptibility(energy: np.ndarray, temperature: np.ndarray):
-    
-    chi = lambda energy: np.var(energy) / (temperature * energy.shape[0]*energy.shape[1])
-    output = np.array([chi(state[i]) for i in range(num_runs) for state in end_states])
-    return output
-
-def heat_capacity(energy: np.ndarray, temperature: np.ndarray):
-    C = lambda energy: np.var(energy) / (temperature**2 * energy.shape[0]*energy.shape[1])
-    output = np.array([C(state[i]) for i in range(num_runs) for state in end_states])
-    return output
