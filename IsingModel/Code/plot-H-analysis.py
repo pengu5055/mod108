@@ -14,44 +14,48 @@ mpl.use("qtagg")
 
 # Simulation parameters
 save_path = "./IsingModel/Results/H-analysis.h5"
-bounds = (-18, 0)
-length = 17
-temperature = 1
-init = [0, -17, -4, -2, -8, -13, -7, -2, -5, -2, -3, -2, -3, -10, -15, -7, 0]
-molecules = np.arange(0, 17)
 T_values = np.loadtxt("./IsingModel/Code/H_range.lst")
 
-# Containers for data
-end_energy = []
-end_states = []
+def susceptibility(states: np.ndarray, temperature: np.ndarray):
+    chi = lambda energy: np.var(energy) / (temperature * energy.shape[0])
+    # output = np.array([chi(state[i]) for i in range(1) for state in states])
+    return chi(states)
 
+def heat_capacity(states: np.ndarray, temperature: np.ndarray):
+    C = lambda energy: np.var(energy) / (temperature**2 * energy.shape[0])
+    # output = np.array([C(state[i]) for i in range(1) for state in states])
+    return C(states)
 
-# Load data
-with h5py.File(save_path, "r") as f:
-    num_runs = 100
+energies = np.load("./IsingModel/Results/E-v2.npy")
+H_values = np.loadtxt("./IsingModel/Code/H_range.lst")
 
-    for i, T in enumerate(T_values):
-        row_states = []
-        row_end_energy = []
+# Calculate Observables
+chi = [susceptibility(energy, 1) for energy in energies]
+c = [heat_capacity(energy, 1) for energy in energies]
+chi = np.array(chi)
+c = np.array(c)
 
-        for run in range(num_runs):
-            key = f"{T}-{run}"
-            group = f[key]
-            row_states.append(group[f"state-{key}"][:])
-            row_end_energy.append(group[f"energy-{key}"][-1])
+# Plot the data
+colors = ["#37123c","#d72483","#ddc4dd","#60afff","#98CE00"]
 
-        end_states.append(row_states) 
-        end_energy.append(row_end_energy)
+fig, ax = plt.subplots(1, 2, figsize=(12, 5))
 
-# Calculate statistics
-end_energy = np.array(end_energy)
-avg_energy = np.mean(end_energy, axis=1)
-sigma_energy = np.std(end_energy, axis=1)
+# Plot Spin Susceptibility
+ax[0].plot(H_values, chi, marker="o", color=colors[1], label=r"Spin Susceptibility $\chi$")
+ax[0].set_xlabel(r"Magnetic Field $H$")
+ax[0].set_ylabel(r"Spin Susceptibility $\chi$")
+ax[0].set_title(r"Spin Susceptibility vs. Magnetic Field")
+ax[0].set_yscale("log")
+ax[0].legend()
 
-def magnetization(state: np.ndarray):
-    S = np.array([[np.sum(np.array(final[run])) for run in range(num_runs)] for final in end_states]) 
-    return S
+# Plot Heat Capacity
+ax[1].plot(H_values, c, marker="o", color=colors[2], label=r"Heat Capacity $C$")
+ax[1].set_xlabel(r"Magnetic Field $H$")
+ax[1].set_ylabel(r"Heat Capacity $C$")
+ax[1].set_title(r"Heat Capacity vs. Magnetic Field")
+ax[1].set_yscale("log")
+ax[1].legend()
 
-S = np.abs(magnetization(end_states))
-avgS = np.mean(S, axis=1)
-sigmaS = np.std(S, axis=1)
+plt.tight_layout()
+plt.savefig("./IsingModel/Results/H-analysis.png")
+plt.show()
